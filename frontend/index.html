@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on phones and tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>AFRA Connect | Reproductive Health, Connected</title>
+
+    <!-- Website description -->
+    <meta
+        name="description"
+        content="AFRA Connect gives you one secure place to manage birth control records, home test kits and test results."
+    >
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+    <header class="navbar">
+        <div class="container navbar-container">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span class="logo-afra">AFRA</span>
+                <span class="logo-connect">Connect</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">
+                    Home
+                </a>
+
+                <a href="pages/about.html" class="nav-link">
+                    How it works
+                </a>
+
+                <a href="pages/about.html" class="nav-link">
+                    About
+                </a>
+
+                <a href="#contact" class="nav-link">
+                    Contact
+                </a>
+            </nav>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-actions">
+                <a href="pages/login.html" class="btn btn-outline">
+                    Log in
+                </a>
+
+                <a href="pages/signup.html" class="btn btn-primary">
+                    Sign up
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation menu"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         MOBILE NAVIGATION
+    ========================== -->
+    <div class="mobile-nav" id="mobileNav">
+
+        <a href="index.html" class="mobile-nav-link">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="pages/about.html" class="mobile-nav-link">
+            <i class="fa-solid fa-circle-info"></i>
+            How it works
+        </a>
+
+        <a href="pages/about.html" class="mobile-nav-link">
+            <i class="fa-solid fa-heart-pulse"></i>
+            About
+        </a>
+
+        <a href="#contact" class="mobile-nav-link">
+            <i class="fa-solid fa-envelope"></i>
+            Contact
+        </a>
+
+        <div class="mobile-nav-actions">
+
+            <a href="pages/login.html" class="btn btn-outline">
+                Log in
+            </a>
+
+            <a href="pages/signup.html" class="btn btn-primary">
+                Sign up
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+    <main>
+
+        <section class="hero">
+
+            <div class="container hero-container">
+
+                <!-- Hero Text -->
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        Reproductive health made simpler
+                    </span>
+
+                    <h1>
+                        Reproductive health,
+                        <span>connected.</span>
+                    </h1>
+
+                    <p>
+                        AFRA Connect gives you one secure place to manage
+                        birth-control records, home test kits and test results
+                        — with room to grow into a connected health ecosystem.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="pages/signup.html" class="btn btn-primary btn-large">
+                            Get started
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="#how-it-works" class="btn btn-light btn-large">
+                            Learn more
+                        </a>
+
+                    </div>
+
+                    <!-- Small Trust Message -->
+                    <div class="hero-trust">
+
+                        <div class="trust-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <strong>Designed with privacy in mind</strong>
+                            <span>Your health information belongs to you.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero Visual / Dashboard Preview -->
+                <div class="hero-visual">
+
+                    <div class="hero-card">
+
+                        <!-- Preview Header -->
+                        <div class="preview-header">
+
+                            <div>
+                                <span class="preview-label">
+                                    Your health overview
+                                </span>
+
+                                <h3>
+                                    Welcome back 👋
+                                </h3>
+                            </div>
+
+                            <div class="preview-profile">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Birth Control Preview -->
+                        <div class="preview-card birth-control-preview">
+
+                            <div class="preview-card-icon pink-icon">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+
+                            <div class="preview-card-content">
+
+                                <span>
+                                    Birth control
+                                </span>
+
+                                <strong>
+                                    Active method
+                                </strong>
+
+                                <small>
+                                    Reminder today · 8:00 PM
+                                </small>
+
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right preview-arrow"></i>
+
+                        </div>
+
+
+                        <!-- Test Preview -->
+                        <div class="preview-card test-preview">
+
+                            <div class="preview-card-icon lavender-icon">
+                                <i class="fa-solid fa-vial"></i>
+                            </div>
+
+                            <div class="preview-card-content">
+
+                                <span>
+                                    Recent test
+                                </span>
+
+                                <strong>
+                                    Pregnancy test
+                                </strong>
+
+                                <small>
+                                    Result recorded today
+                                </small>
+
+                            </div>
+
+                            <span class="result-badge">
+                                Recorded
+                            </span>
+
+                        </div>
+
+
+                        <!-- Reminder Preview -->
+                        <div class="preview-reminder">
+
+                            <div class="reminder-icon">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Upcoming reminder
+                                </strong>
+
+                                <span>
+                                    Birth-control reminder · 8:00 PM
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HOW IT WORKS
+        ========================== -->
+        <section class="features-section" id="how-it-works">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        HOW IT WORKS
+                    </span>
+
+                    <h2>
+                        Everything you need,
+                        <span>in one place.</span>
+                    </h2>
+
+                    <p>
+                        AFRA Connect helps you keep important reproductive-health
+                        information organized and accessible.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <!-- Feature 1 -->
+                    <article class="feature-card">
+
+                        <div class="feature-icon feature-pink">
+                            <i class="fa-solid fa-pills"></i>
+                        </div>
+
+                        <h3>
+                            Birth-control tracking
+                        </h3>
+
+                        <p>
+                            Keep your birth-control methods, dates and
+                            reminders organized in one place.
+                        </p>
+
+                        <a href="pages/signup.html" class="feature-link">
+                            Get started
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <!-- Feature 2 -->
+                    <article class="feature-card">
+
+                        <div class="feature-icon feature-lavender">
+                            <i class="fa-solid fa-vial"></i>
+                        </div>
+
+                        <h3>
+                            Test-kit history
+                        </h3>
+
+                        <p>
+                            Register your home-test kits and keep important
+                            product information available when you need it.
+                        </p>
+
+                        <a href="pages/signup.html" class="feature-link">
+                            Register a kit
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <!-- Feature 3 -->
+                    <article class="feature-card">
+
+                        <div class="feature-icon feature-green">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <h3>
+                            Test-result records
+                        </h3>
+
+                        <p>
+                            Record your test results and keep your health
+                            history organized for future reference.
+                        </p>
+
+                        <a href="pages/signup.html" class="feature-link">
+                            Record a result
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONNECTED ECOSYSTEM
+        ========================== -->
+        <section class="ecosystem-section">
+
+            <div class="container ecosystem-container">
+
+                <div class="ecosystem-content">
+
+                    <span class="section-label">
+                        A CONNECTED ECOSYSTEM
+                    </span>
+
+                    <h2>
+                        Built for today.
+                        <span>Ready for tomorrow.</span>
+                    </h2>
+
+                    <p>
+                        AFRA Connect starts with helping users manage their
+                        reproductive-health information. The platform is
+                        designed to grow into a connected ecosystem for users,
+                        manufacturers and healthcare providers.
+                    </p>
+
+
+                    <div class="ecosystem-list">
+
+                        <div class="ecosystem-item">
+
+                            <div class="ecosystem-item-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    For users
+                                </strong>
+
+                                <span>
+                                    Manage your reproductive-health information.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="ecosystem-item">
+
+                            <div class="ecosystem-item-icon">
+                                <i class="fa-solid fa-industry"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    For manufacturers
+                                </strong>
+
+                                <span>
+                                    Manage products and registered test kits.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="ecosystem-item">
+
+                            <div class="ecosystem-item-icon">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    For healthcare providers
+                                </strong>
+
+                                <span>
+                                    Create a foundation for future
+                                    consent-based connections.
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Ecosystem Visual -->
+                <div class="ecosystem-visual">
+
+                    <div class="ecosystem-circle">
+
+                        <div class="ecosystem-center">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <span>AFRA</span>
+                        </div>
+
+                        <div class="ecosystem-node node-user">
+                            <i class="fa-solid fa-user"></i>
+                            <span>User</span>
+                        </div>
+
+                        <div class="ecosystem-node node-manufacturer">
+                            <i class="fa-solid fa-industry"></i>
+                            <span>Manufacturer</span>
+                        </div>
+
+                        <div class="ecosystem-node node-provider">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            <span>Provider</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CALL TO ACTION
+        ========================== -->
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-card">
+
+                    <div class="cta-content">
+
+                        <span class="cta-label">
+                            START YOUR JOURNEY
+                        </span>
+
+                        <h2>
+                            Take control of your
+                            health information.
+                        </h2>
+
+                        <p>
+                            Create your AFRA Connect account and start
+                            organizing your reproductive-health records.
+                        </p>
+
+                    </div>
+
+                    <a href="pages/signup.html" class="btn btn-white btn-large">
+                        Create your account
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer" id="contact">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <!-- Brand -->
+                <div class="footer-brand">
+
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-afra">AFRA</span>
+                        <span class="logo-connect">Connect</span>
+                    </a>
+
+                    <p>
+                        Reproductive health, connected.
+                    </p>
+
+                    <p class="footer-description">
+                        A digital platform designed to help users manage
+                        reproductive-health information and build connections
+                        across the healthcare ecosystem.
+                    </p>
+
+                </div>
+
+
+                <!-- Platform Links -->
+                <div class="footer-column">
+
+                    <h4>
+                        Platform
+                    </h4>
+
+                    <a href="pages/login.html">
+                        Log in
+                    </a>
+
+                    <a href="pages/signup.html">
+                        Sign up
+                    </a>
+
+                    <a href="#how-it-works">
+                        How it works
+                    </a>
+
+                    <a href="pages/about.html">
+                        About
+                    </a>
+
+                </div>
+
+
+                <!-- Features -->
+                <div class="footer-column">
+
+                    <h4>
+                        Features
+                    </h4>
+
+                    <a href="pages/signup.html">
+                        Birth control
+                    </a>
+
+                    <a href="pages/signup.html">
+                        Test kits
+                    </a>
+
+                    <a href="pages/signup.html">
+                        Test results
+                    </a>
+
+                    <a href="pages/signup.html">
+                        Health records
+                    </a>
+
+                </div>
+
+
+                <!-- Contact -->
+                <div class="footer-column">
+
+                    <h4>
+                        Contact
+                    </h4>
+
+                    <a href="mailto:hello@afraconnect.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        hello@afraconnect.com
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Ghana
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 AFRA Connect. All rights reserved.
+                </p>
+
+                <div class="footer-bottom-links">
+
+                    <a href="#">
+                        Privacy
+                    </a>
+
+                    <a href="#">
+                        Terms
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
