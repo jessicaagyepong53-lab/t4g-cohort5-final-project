@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | AFRA Connect</title>
+    <meta name="description" content="Log in to your AFRA Connect account.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="auth-page">
+    <!-- =========================
+         AUTHENTICATION CONTAINER
+    ========================== -->
+
+    <main class="auth-container">
+        <!-- =========================
+             LEFT SIDE
+        ========================== -->
+
+        <section class="auth-brand">
+            <a href="../index.html" class="auth-logo">
+                <span>AFRA</span>
+                <strong>Connect</strong>
+            </a>
+
+
+            <div class="auth-brand-content">
+                <span class="auth-badge">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    Reproductive health, connected.
+                </span>
+
+                <h1>
+                    Your health.
+                    <br>
+                    Your information.
+                    <br>
+                    <span>Your control.</span>
+                </h1>
+
+                <p>
+                    AFRA Connect gives you a secure place to organize
+                    your reproductive-health information, test kits,
+                    test results and birth-control records.
+                </p>
+            </div>
+
+            <!-- Security message -->
+            <div class="auth-security">
+                <div class="auth-security-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                    <strong>
+                        Privacy matters
+                    </strong>
+                    <span>
+                        Your health information is designed
+                        to stay private and secure.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             RIGHT SIDE
+        ========================== -->
+
+        <section class="auth-form-section">
+            <div class="auth-form-wrapper">
+                <!-- Mobile logo -->
+                <a href="../index.html" class="mobile-auth-logo">
+                    <span>AFRA</span>
+                    <strong>Connect</strong>
+                </a>
+                <!-- Heading -->
+
+                <div class="auth-heading">
+                    <h2>
+                        Welcome back
+                    </h2>
+                    <p>
+                        Log in to your AFRA Connect account.
+                    </p>
+                </div>
+
+                <!-- Login Form -->
+
+                <form
+                    action="#"
+                    method="POST"
+                    id="loginForm"
+                    class="auth-form"
+                >
+                    <!-- Email -->
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <div class="form-label-row">
+                            <label for="password">
+                                Password
+                            </label>
+                            <a href="#" class="forgot-password">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Show password"
+                            >
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Remember me -->
+                    <div class="remember-row">
+                        <label class="checkbox-container">
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                                name="rememberMe"
+                            >
+                            <span class="custom-checkbox"></span>
+                            <span>
+                                Remember me
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Login button -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary auth-submit"
+                    >
+                        <span>
+                            Log in
+                        </span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <!-- Error message -->
+                    <div
+                        class="form-message error-message"
+                        id="loginError"
+                        role="alert"
+                    ></div>
+                </form>
+
+                <!-- Sign up -->
+                <div class="auth-switch">
+                    <span>
+                        Don't have an account?
+                    </span>
+                    <a href="signup.html">
+                        Sign up
+                    </a>
+                </div>
+
+                <!-- Back home -->
+                <a href="../index.html" class="back-home">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to home
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="src/script.js"></script>
+    <script src="src/auth.js"></script>
+</body>
+</html>

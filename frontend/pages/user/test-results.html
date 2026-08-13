@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Results | AFRA Connect</title>
+    <meta name="description" content="View and manage your test results with AFRA Connect.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="../../index.html" class="logo">
+                <span class="logo-afra">AFRA</span>
+                <span class="logo-connect">Connect</span>
+            </a>
+
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <span class="sidebar-section-title">MAIN</span>
+
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="birth-control.html" class="sidebar-link">
+                <i class="fa-solid fa-pills"></i>
+                <span>Birth Control</span>
+            </a>
+
+            <a href="test-kits.html" class="sidebar-link">
+                <i class="fa-solid fa-vial"></i>
+                <span>Test Kits</span>
+            </a>
+
+            <a href="test-results.html" class="sidebar-link active">
+                <i class="fa-solid fa-file-medical"></i>
+                <span>Test Results</span>
+            </a>
+
+            <span class="sidebar-section-title">ACCOUNT</span>
+
+            <a href="profile.html" class="sidebar-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#" class="sidebar-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="sidebar-link logout-link" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div class="dashboard-header-left">
+                <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <span class="dashboard-greeting">YOUR HEALTH</span>
+                    <h1>Test Results</h1>
+                </div>
+            </div>
+
+            <div class="dashboard-header-right">
+                <button class="notification-btn" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <a href="profile.html" class="user-profile">
+                    <div class="user-avatar">AJ</div>
+                    <div class="user-profile-info">
+                        <strong>Afia</strong>
+                        <span>My account</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+
+            <!-- Page Introduction -->
+            <section class="page-intro">
+                <div>
+                    <span class="section-label">TEST RESULTS</span>
+                    <h2>Your health results</h2>
+                    <p>View and organize your test results in one place.</p>
+                </div>
+
+                <button class="btn btn-primary" id="addTestResultBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add result
+                </button>
+            </section>
+
+            <!-- Result Summary -->
+            <section class="overview-grid">
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon green-icon">
+                            <i class="fa-solid fa-file-circle-check"></i>
+                        </div>
+                        <span class="overview-status active-status">Available</span>
+                    </div>
+
+                    <span class="overview-label">TOTAL RESULTS</span>
+                    <h3>3 Results</h3>
+                    <p>Results stored in your records</p>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon lavender-icon">
+                            <i class="fa-solid fa-vial"></i>
+                        </div>
+                        <span class="overview-status">Latest</span>
+                    </div>
+
+                    <span class="overview-label">LATEST RESULT</span>
+                    <h3>10 Aug 2026</h3>
+                    <p>Most recently recorded result</p>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon pink-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <span class="overview-status">Upcoming</span>
+                    </div>
+
+                    <span class="overview-label">FOLLOW-UP</span>
+                    <h3>18 Aug 2026</h3>
+                    <p>Next scheduled follow-up</p>
+                </div>
+
+            </section>
+
+            <!-- Results -->
+            <section class="dashboard-panel results-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <span class="panel-label">HEALTH RECORDS</span>
+                        <h2>Recent test results</h2>
+                    </div>
+
+                    <div class="panel-actions">
+                        <button class="filter-button" id="resultFilterBtn">
+                            <i class="fa-solid fa-filter"></i>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="results-list">
+
+                    <!-- Result 1 -->
+                    <article class="result-card">
+
+                        <div class="result-icon green-icon">
+                            <i class="fa-solid fa-file-circle-check"></i>
+                        </div>
+
+                        <div class="result-info">
+                            <span class="result-category">PREGNANCY TEST</span>
+                            <h3>Home Pregnancy Test</h3>
+
+                            <div class="result-meta">
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    10 Aug 2026
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-vial"></i>
+                                    Kit: AFRA-PT-00124
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="result-outcome">
+                            <span class="result-label">RESULT</span>
+                            <strong class="result-negative">Negative</strong>
+                        </div>
+
+                        <button class="icon-button" aria-label="View result">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </article>
+
+                    <!-- Result 2 -->
+                    <article class="result-card">
+
+                        <div class="result-icon lavender-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <div class="result-info">
+                            <span class="result-category">OVULATION TEST</span>
+                            <h3>Ovulation Test</h3>
+
+                            <div class="result-meta">
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    06 Aug 2026
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-vial"></i>
+                                    Kit: AFRA-OT-00651
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="result-outcome">
+                            <span class="result-label">RESULT</span>
+                            <strong class="result-positive">Positive</strong>
+                        </div>
+
+                        <button class="icon-button" aria-label="View result">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </article>
+
+                    <!-- Result 3 -->
+                    <article class="result-card">
+
+                        <div class="result-icon pink-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <div class="result-info">
+                            <span class="result-category">STI TEST</span>
+                            <h3>STI Screening</h3>
+
+                            <div class="result-meta">
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    01 Aug 2026
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-building"></i>
+                                    Registered facility
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="result-outcome">
+                            <span class="result-label">RESULT</span>
+                            <strong class="result-negative">Negative</strong>
+                        </div>
+
+                        <button class="icon-button" aria-label="View result">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="resultsEmptyState">
+                    <div class="empty-state-icon">
+                        <i class="fa-solid fa-file-medical"></i>
+                    </div>
+
+                    <h3>No test results yet</h3>
+
+                    <p>
+                        Add a test result to start building your
+                        health record.
+                    </p>
+
+                    <button class="btn btn-primary">
+                        <i class="fa-solid fa-plus"></i>
+                        Add result
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Privacy Notice -->
+            <section class="health-information-card">
+                <div class="health-information-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                    <h3>Keep your results private</h3>
+                    <p>
+                        Test results can contain sensitive health information.
+                        AFRA Connect is designed so that access to your records
+                        is controlled and protected.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Add Result Modal -->
+            <div class="modal-overlay" id="testResultModal">
+
+                <div class="modal">
+
+                    <div class="modal-header">
+                        <div>
+                            <span class="section-label">TEST RESULTS</span>
+                            <h2>Add test result</h2>
+                        </div>
+
+                        <button
+                            class="modal-close"
+                            id="closeTestResultModal"
+                            aria-label="Close"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <form id="testResultForm">
+
+                        <div class="form-group">
+                            <label for="resultTestType">Test type</label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-vial"></i>
+
+                                <select
+                                    id="resultTestType"
+                                    name="testType"
+                                    required
+                                >
+                                    <option value="">
+                                        Select test type
+                                    </option>
+
+                                    <option value="pregnancy">
+                                        Pregnancy test
+                                    </option>
+
+                                    <option value="ovulation">
+                                        Ovulation test
+                                    </option>
+
+                                    <option value="sti">
+                                        STI test
+                                    </option>
+
+                                    <option value="hiv">
+                                        HIV test
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resultDate">Test date</label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-calendar"></i>
+
+                                <input
+                                    type="date"
+                                    id="resultDate"
+                                    name="resultDate"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resultValue">Result</label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-file-medical"></i>
+
+                                <select
+                                    id="resultValue"
+                                    name="result"
+                                    required
+                                >
+                                    <option value="">
+                                        Select result
+                                    </option>
+
+                                    <option value="positive">
+                                        Positive
+                                    </option>
+
+                                    <option value="negative">
+                                        Negative
+                                    </option>
+
+                                    <option value="inconclusive">
+                                        Inconclusive
+                                    </option>
+
+                                    <option value="pending">
+                                        Pending
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resultKitId">Test kit ID</label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-barcode"></i>
+
+                                <input
+                                    type="text"
+                                    id="resultKitId"
+                                    name="kitId"
+                                    placeholder="Enter kit ID if applicable"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resultNotes">Notes</label>
+
+                            <textarea
+                                id="resultNotes"
+                                name="notes"
+                                rows="3"
+                                placeholder="Add any relevant notes..."
+                            ></textarea>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                id="cancelTestResult"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Save result
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../src/script.js"></script>
+    <script src="../src/user-test-results.js"></script>
+
+</body>
+</html>

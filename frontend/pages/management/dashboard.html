@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Dashboard | AFRA Connect</title>
+    <meta name="description" content="AFRA Connect management dashboard.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="../../index.html" class="logo">
+                <span class="logo-afra">AFRA</span>
+                <span class="logo-connect">Connect</span>
+            </a>
+
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <span class="sidebar-section-title">MANAGEMENT</span>
+
+            <a href="dashboard.html" class="sidebar-link active">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="products.html" class="sidebar-link">
+                <i class="fa-solid fa-box"></i>
+                <span>Products</span>
+            </a>
+
+            <a href="test-kits.html" class="sidebar-link">
+                <i class="fa-solid fa-vial"></i>
+                <span>Test Kits</span>
+            </a>
+
+            <a href="users.html" class="sidebar-link">
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+            <span class="sidebar-section-title">ACCOUNT</span>
+
+            <a href="profile.html" class="sidebar-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#" class="sidebar-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="sidebar-link logout-link" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="dashboard-header-left">
+                <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <span class="dashboard-greeting">MANAGEMENT PORTAL</span>
+                    <h1>Dashboard</h1>
+                </div>
+            </div>
+
+            <div class="dashboard-header-right">
+
+                <button class="notification-btn" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <a href="profile.html" class="user-profile">
+                    <div class="user-avatar">AD</div>
+
+                    <div class="user-profile-info">
+                        <strong>Admin</strong>
+                        <span>Management</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+
+            <!-- Introduction -->
+            <section class="page-intro">
+                <div>
+                    <span class="section-label">OVERVIEW</span>
+                    <h2>Welcome to the management portal</h2>
+                    <p>Monitor AFRA Connect activity and manage products, test kits and users.</p>
+                </div>
+
+                <div class="management-date">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>12 August 2026</span>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="overview-grid management-stats">
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon lavender-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <span class="overview-status active-status">
+                            +12%
+                        </span>
+                    </div>
+
+                    <span class="overview-label">REGISTERED USERS</span>
+                    <h3>1,248</h3>
+                    <p>Compared with last month</p>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon pink-icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <span class="overview-status active-status">
+                            Active
+                        </span>
+                    </div>
+
+                    <span class="overview-label">PRODUCTS</span>
+                    <h3>36</h3>
+                    <p>Products currently listed</p>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon green-icon">
+                            <i class="fa-solid fa-vial"></i>
+                        </div>
+
+                        <span class="overview-status active-status">
+                            Active
+                        </span>
+                    </div>
+
+                    <span class="overview-label">TEST KITS</span>
+                    <h3>18</h3>
+                    <p>Test kits supported</p>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon lavender-icon">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+
+                        <span class="overview-status">
+                            This month
+                        </span>
+                    </div>
+
+                    <span class="overview-label">TEST RECORDS</span>
+                    <h3>3,482</h3>
+                    <p>Records submitted</p>
+                </div>
+
+            </section>
+
+            <!-- Main Dashboard Grid -->
+            <section class="dashboard-columns">
+
+                <!-- Recent Activity -->
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">SYSTEM ACTIVITY</span>
+                            <h2>Recent activity</h2>
+                        </div>
+
+                        <button class="panel-more-btn" aria-label="More options">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </div>
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+                            <div class="activity-icon lavender-icon">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+
+                            <div class="activity-content">
+                                <strong>New user registered</strong>
+                                <span>New account created · 12 Aug 2026</span>
+                            </div>
+
+                            <span class="activity-time">10:42 AM</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon green-icon">
+                                <i class="fa-solid fa-vial"></i>
+                            </div>
+
+                            <div class="activity-content">
+                                <strong>Test kit added</strong>
+                                <span>Pregnancy Test Kit · 12 Aug 2026</span>
+                            </div>
+
+                            <span class="activity-time">09:18 AM</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon pink-icon">
+                                <i class="fa-solid fa-box"></i>
+                            </div>
+
+                            <div class="activity-content">
+                                <strong>Product updated</strong>
+                                <span>Product information updated</span>
+                            </div>
+
+                            <span class="activity-time">08:54 AM</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon lavender-icon">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+
+                            <div class="activity-content">
+                                <strong>Management login</strong>
+                                <span>Administrator signed in</span>
+                            </div>
+
+                            <span class="activity-time">08:10 AM</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">QUICK ACTIONS</span>
+                            <h2>Manage AFRA Connect</h2>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+
+                        <a href="products.html" class="quick-action">
+                            <div class="quick-action-icon pink-icon">
+                                <i class="fa-solid fa-box"></i>
+                            </div>
+
+                            <div>
+                                <strong>Manage products</strong>
+                                <span>Add or update products</span>
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="test-kits.html" class="quick-action">
+                            <div class="quick-action-icon lavender-icon">
+                                <i class="fa-solid fa-vial"></i>
+                            </div>
+
+                            <div>
+                                <strong>Manage test kits</strong>
+                                <span>View supported test kits</span>
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="users.html" class="quick-action">
+                            <div class="quick-action-icon green-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                            <div>
+                                <strong>Manage users</strong>
+                                <span>View registered users</span>
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Second Row -->
+            <section class="dashboard-columns">
+
+                <!-- User Growth -->
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">USERS</span>
+                            <h2>User overview</h2>
+                        </div>
+
+                        <a href="users.html" class="panel-link">
+                            View users
+                        </a>
+                    </div>
+
+                    <div class="management-overview">
+
+                        <div class="management-overview-item">
+                            <span class="management-overview-number">1,248</span>
+                            <span>Total users</span>
+                        </div>
+
+                        <div class="management-overview-item">
+                            <span class="management-overview-number">86</span>
+                            <span>New this month</span>
+                        </div>
+
+                        <div class="management-overview-item">
+                            <span class="management-overview-number">1,162</span>
+                            <span>Active users</span>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-section">
+
+                        <div class="progress-header">
+                            <span>User activity</span>
+                            <strong>93%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width: 93%;"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Products Overview -->
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">PRODUCTS</span>
+                            <h2>Product overview</h2>
+                        </div>
+
+                        <a href="products.html" class="panel-link">
+                            View products
+                        </a>
+                    </div>
+
+                    <div class="management-overview">
+
+                        <div class="management-overview-item">
+                            <span class="management-overview-number">36</span>
+                            <span>Total products</span>
+                        </div>
+
+                        <div class="management-overview-item">
+                            <span class="management-overview-number">31</span>
+                            <span>Active</span>
+                        </div>
+
+                        <div class="management-overview-item">
+                            <span class="management-overview-number">5</span>
+                            <span>Needs review</span>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-section">
+
+                        <div class="progress-header">
+                            <span>Active products</span>
+                            <strong>86%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width: 86%;"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- System Notice -->
+            <section class="health-information-card">
+
+                <div class="health-information-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                    <h3>Management access</h3>
+                    <p>
+                        Management accounts have access to administrative
+                        functions based on their assigned permissions.
+                        Sensitive user health information should only be
+                        accessed when explicitly authorized.
+                    </p>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../src/script.js"></script>
+    <script src="../src/management-dashboard.js"></script>
+
+</body>
+</html>

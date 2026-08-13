@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | AFRA Connect</title>
-    <meta name="description" content="Manage healthcare products on AFRA Connect.">
+    <title>Test Kits | AFRA Connect</title>
+    <meta name="description" content="Manage reproductive health test kits on AFRA Connect.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../src/style.css">
 </head>
 
 <body class="dashboard-page">
 
-    <!-- Sidebar -->
+    <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
+
         <div class="sidebar-header">
+
             <a href="../../index.html" class="logo">
                 <span class="logo-afra">AFRA</span>
                 <span class="logo-connect">Connect</span>
@@ -22,89 +24,161 @@
             <button class="sidebar-close" id="sidebarClose">
                 <i class="fa-solid fa-xmark"></i>
             </button>
+
         </div>
+
 
         <nav class="sidebar-nav">
 
-            <span class="sidebar-section-title">MANAGEMENT</span>
+            <span class="sidebar-section-title">
+                MANAGEMENT
+            </span>
+
 
             <a href="dashboard.html" class="sidebar-link">
+
                 <i class="fa-solid fa-chart-line"></i>
+
                 <span>Dashboard</span>
+
             </a>
 
-            <a href="products.html" class="sidebar-link active">
+
+            <a href="products.html" class="sidebar-link">
+
                 <i class="fa-solid fa-box"></i>
+
                 <span>Products</span>
+
             </a>
 
-            <a href="test-kits.html" class="sidebar-link">
+
+            <a href="test-kits.html" class="sidebar-link active">
+
                 <i class="fa-solid fa-vial"></i>
+
                 <span>Test Kits</span>
+
             </a>
+
 
             <a href="users.html" class="sidebar-link">
+
                 <i class="fa-solid fa-users"></i>
+
                 <span>Users</span>
+
             </a>
 
-            <span class="sidebar-section-title">ACCOUNT</span>
+
+            <span class="sidebar-section-title">
+                ACCOUNT
+            </span>
+
 
             <a href="profile.html" class="sidebar-link">
+
                 <i class="fa-solid fa-user"></i>
+
                 <span>My Profile</span>
+
             </a>
 
+
             <a href="#" class="sidebar-link">
+
                 <i class="fa-solid fa-gear"></i>
+
                 <span>Settings</span>
+
             </a>
 
         </nav>
 
+
         <div class="sidebar-bottom">
-            <a href="#" class="sidebar-link logout-link" id="logoutBtn">
+
+            <a
+                href="#"
+                class="sidebar-link logout-link"
+                id="logoutBtn"
+            >
+
                 <i class="fa-solid fa-right-from-bracket"></i>
+
                 <span>Logout</span>
+
             </a>
+
         </div>
 
     </aside>
 
-    <!-- Main -->
+
+    <!-- MAIN -->
     <div class="dashboard-main">
 
-        <!-- Header -->
+
+        <!-- HEADER -->
         <header class="dashboard-header">
 
             <div class="dashboard-header-left">
 
-                <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+                <button
+                    class="mobile-sidebar-btn"
+                    id="mobileSidebarBtn"
+                >
+
                     <i class="fa-solid fa-bars"></i>
+
                 </button>
 
+
                 <div>
-                    <span class="dashboard-greeting">MANAGEMENT PORTAL</span>
-                    <h1>Products</h1>
+
+                    <span class="dashboard-greeting">
+                        MANAGEMENT PORTAL
+                    </span>
+
+                    <h1>Test Kits</h1>
+
                 </div>
 
             </div>
 
+
             <div class="dashboard-header-right">
 
-                <button class="notification-btn" aria-label="Notifications">
+                <button
+                    class="notification-btn"
+                    aria-label="Notifications"
+                >
+
                     <i class="fa-regular fa-bell"></i>
+
                     <span class="notification-dot"></span>
+
                 </button>
 
-                <a href="profile.html" class="user-profile">
 
-                    <div class="user-avatar">AD</div>
+                <a
+                    href="profile.html"
+                    class="user-profile"
+                >
+
+                    <div class="user-avatar">
+                        AD
+                    </div>
+
 
                     <div class="user-profile-info">
+
                         <strong>Admin</strong>
+
                         <span>Management</span>
+
                     </div>
+
 
                     <i class="fa-solid fa-chevron-down"></i>
 
@@ -114,62 +188,45 @@
 
         </header>
 
+
         <main class="dashboard-content">
 
-            <!-- Page Intro -->
+
+            <!-- INTRO -->
             <section class="page-intro">
 
                 <div>
-                    <span class="section-label">PRODUCT MANAGEMENT</span>
 
-                    <h2>Healthcare products</h2>
+                    <span class="section-label">
+                        TEST KIT MANAGEMENT
+                    </span>
+
+                    <h2>Test kits</h2>
 
                     <p>
-                        Add, update and manage products available
-                        through AFRA Connect.
+                        Manage supported reproductive-health
+                        test kits and their information.
                     </p>
 
                 </div>
 
-                <button class="btn btn-primary" id="addProductBtn">
+
+                <button
+                    class="btn btn-primary"
+                    id="addTestKitBtn"
+                >
 
                     <i class="fa-solid fa-plus"></i>
 
-                    Add product
+                    Add test kit
 
                 </button>
 
             </section>
 
 
-            <!-- Product Statistics -->
+            <!-- STATISTICS -->
             <section class="overview-grid">
-
-                <div class="overview-card">
-
-                    <div class="overview-card-top">
-
-                        <div class="overview-icon pink-icon">
-                            <i class="fa-solid fa-box"></i>
-                        </div>
-
-                        <span class="overview-status active-status">
-                            Active
-                        </span>
-
-                    </div>
-
-                    <span class="overview-label">
-                        TOTAL PRODUCTS
-                    </span>
-
-                    <h3>36</h3>
-
-                    <p>
-                        Products currently registered
-                    </p>
-
-                </div>
 
 
                 <div class="overview-card">
@@ -177,26 +234,33 @@
                     <div class="overview-card-top">
 
                         <div class="overview-icon green-icon">
-                            <i class="fa-solid fa-circle-check"></i>
+
+                            <i class="fa-solid fa-vial"></i>
+
                         </div>
 
+
                         <span class="overview-status active-status">
-                            Available
+                            Active
                         </span>
 
                     </div>
 
+
                     <span class="overview-label">
-                        ACTIVE PRODUCTS
+                        TOTAL TEST KITS
                     </span>
 
-                    <h3>31</h3>
+
+                    <h3>18</h3>
+
 
                     <p>
-                        Products currently active
+                        Test kits currently registered
                     </p>
 
                 </div>
+
 
 
                 <div class="overview-card">
@@ -204,8 +268,45 @@
                     <div class="overview-card-top">
 
                         <div class="overview-icon lavender-icon">
-                            <i class="fa-solid fa-clock"></i>
+
+                            <i class="fa-solid fa-circle-check"></i>
+
                         </div>
+
+
+                        <span class="overview-status active-status">
+                            Supported
+                        </span>
+
+                    </div>
+
+
+                    <span class="overview-label">
+                        ACTIVE KITS
+                    </span>
+
+
+                    <h3>15</h3>
+
+
+                    <p>
+                        Kits available on the platform
+                    </p>
+
+                </div>
+
+
+
+                <div class="overview-card">
+
+                    <div class="overview-card-top">
+
+                        <div class="overview-icon pink-icon">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                        </div>
+
 
                         <span class="overview-status">
                             Review
@@ -213,14 +314,17 @@
 
                     </div>
 
+
                     <span class="overview-label">
                         NEEDS REVIEW
                     </span>
 
-                    <h3>5</h3>
+
+                    <h3>3</h3>
+
 
                     <p>
-                        Products requiring attention
+                        Kits requiring attention
                     </p>
 
                 </div>
@@ -228,23 +332,25 @@
             </section>
 
 
-            <!-- Products Panel -->
+            <!-- TEST KIT PANEL -->
             <section class="dashboard-panel">
+
 
                 <div class="panel-header">
 
                     <div>
 
                         <span class="panel-label">
-                            PRODUCT CATALOGUE
+                            TEST KIT CATALOGUE
                         </span>
 
-                        <h2>All products</h2>
+                        <h2>All test kits</h2>
 
                     </div>
 
 
                     <div class="panel-actions">
+
 
                         <div class="search-box">
 
@@ -252,8 +358,8 @@
 
                             <input
                                 type="search"
-                                id="productSearch"
-                                placeholder="Search products..."
+                                id="testKitSearch"
+                                placeholder="Search test kits..."
                             >
 
                         </div>
@@ -261,7 +367,7 @@
 
                         <button
                             class="filter-button"
-                            id="productFilterBtn"
+                            id="testKitFilterBtn"
                         >
 
                             <i class="fa-solid fa-filter"></i>
@@ -275,7 +381,8 @@
                 </div>
 
 
-                <!-- Product Table -->
+
+                <!-- TABLE -->
                 <div class="table-container">
 
                     <table class="data-table">
@@ -284,9 +391,9 @@
 
                             <tr>
 
-                                <th>PRODUCT</th>
+                                <th>TEST KIT</th>
 
-                                <th>CATEGORY</th>
+                                <th>TEST TYPE</th>
 
                                 <th>MANUFACTURER</th>
 
@@ -301,22 +408,33 @@
                         </thead>
 
 
-                        <tbody id="productsTable">
+                        <tbody id="testKitsTable">
 
-                            <!-- Product 1 -->
+
+                            <!-- KIT 1 -->
                             <tr>
 
                                 <td>
 
                                     <div class="table-product">
 
-                                        <div class="table-product-icon pink-icon">
-                                            <i class="fa-solid fa-pills"></i>
+                                        <div class="table-product-icon green-icon">
+
+                                            <i class="fa-solid fa-vial"></i>
+
                                         </div>
 
+
                                         <div>
-                                            <strong>Oral Contraceptive Pills</strong>
-                                            <span>Product ID: AFRA-P001</span>
+
+                                            <strong>
+                                                Pregnancy Test Kit
+                                            </strong>
+
+                                            <span>
+                                                Kit ID: AFRA-TK001
+                                            </span>
+
                                         </div>
 
                                     </div>
@@ -325,7 +443,7 @@
 
 
                                 <td>
-                                    Contraception
+                                    Pregnancy
                                 </td>
 
 
@@ -336,9 +454,14 @@
 
                                 <td>
 
-                                    <span class="table-status status-active">
+                                    <span
+                                        class="table-status status-active"
+                                    >
+
                                         <i class="fa-solid fa-circle"></i>
+
                                         Active
+
                                     </span>
 
                                 </td>
@@ -353,9 +476,11 @@
 
                                     <button
                                         class="table-action"
-                                        aria-label="Product options"
+                                        aria-label="Test kit options"
                                     >
+
                                         <i class="fa-solid fa-ellipsis"></i>
+
                                     </button>
 
                                 </td>
@@ -363,7 +488,8 @@
                             </tr>
 
 
-                            <!-- Product 2 -->
+
+                            <!-- KIT 2 -->
                             <tr>
 
                                 <td>
@@ -371,12 +497,22 @@
                                     <div class="table-product">
 
                                         <div class="table-product-icon lavender-icon">
-                                            <i class="fa-solid fa-shield-heart"></i>
+
+                                            <i class="fa-solid fa-droplet"></i>
+
                                         </div>
 
+
                                         <div>
-                                            <strong>Contraceptive Implant</strong>
-                                            <span>Product ID: AFRA-P002</span>
+
+                                            <strong>
+                                                Ovulation Test Kit
+                                            </strong>
+
+                                            <span>
+                                                Kit ID: AFRA-TK002
+                                            </span>
+
                                         </div>
 
                                     </div>
@@ -385,7 +521,7 @@
 
 
                                 <td>
-                                    Contraception
+                                    Ovulation
                                 </td>
 
 
@@ -396,9 +532,14 @@
 
                                 <td>
 
-                                    <span class="table-status status-active">
+                                    <span
+                                        class="table-status status-active"
+                                    >
+
                                         <i class="fa-solid fa-circle"></i>
+
                                         Active
+
                                     </span>
 
                                 </td>
@@ -413,9 +554,11 @@
 
                                     <button
                                         class="table-action"
-                                        aria-label="Product options"
+                                        aria-label="Test kit options"
                                     >
+
                                         <i class="fa-solid fa-ellipsis"></i>
+
                                     </button>
 
                                 </td>
@@ -423,67 +566,8 @@
                             </tr>
 
 
-                            <!-- Product 3 -->
-                            <tr>
 
-                                <td>
-
-                                    <div class="table-product">
-
-                                        <div class="table-product-icon green-icon">
-                                            <i class="fa-solid fa-box"></i>
-                                        </div>
-
-                                        <div>
-                                            <strong>Emergency Contraception</strong>
-                                            <span>Product ID: AFRA-P003</span>
-                                        </div>
-
-                                    </div>
-
-                                </td>
-
-
-                                <td>
-                                    Emergency contraception
-                                </td>
-
-
-                                <td>
-                                    AFRA Health
-                                </td>
-
-
-                                <td>
-
-                                    <span class="table-status status-active">
-                                        <i class="fa-solid fa-circle"></i>
-                                        Active
-                                    </span>
-
-                                </td>
-
-
-                                <td>
-                                    05 Aug 2026
-                                </td>
-
-
-                                <td>
-
-                                    <button
-                                        class="table-action"
-                                        aria-label="Product options"
-                                    >
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </button>
-
-                                </td>
-
-                            </tr>
-
-
-                            <!-- Product 4 -->
+                            <!-- KIT 3 -->
                             <tr>
 
                                 <td>
@@ -491,12 +575,22 @@
                                     <div class="table-product">
 
                                         <div class="table-product-icon pink-icon">
-                                            <i class="fa-solid fa-heart-pulse"></i>
+
+                                            <i class="fa-solid fa-virus"></i>
+
                                         </div>
 
+
                                         <div>
-                                            <strong>Female Condom</strong>
-                                            <span>Product ID: AFRA-P004</span>
+
+                                            <strong>
+                                                STI Screening Kit
+                                            </strong>
+
+                                            <span>
+                                                Kit ID: AFRA-TK003
+                                            </span>
+
                                         </div>
 
                                     </div>
@@ -505,7 +599,7 @@
 
 
                                 <td>
-                                    Barrier method
+                                    STI
                                 </td>
 
 
@@ -516,16 +610,21 @@
 
                                 <td>
 
-                                    <span class="table-status status-review">
+                                    <span
+                                        class="table-status status-active"
+                                    >
+
                                         <i class="fa-solid fa-circle"></i>
-                                        Review
+
+                                        Active
+
                                     </span>
 
                                 </td>
 
 
                                 <td>
-                                    01 Aug 2026
+                                    06 Aug 2026
                                 </td>
 
 
@@ -533,9 +632,11 @@
 
                                     <button
                                         class="table-action"
-                                        aria-label="Product options"
+                                        aria-label="Test kit options"
                                     >
+
                                         <i class="fa-solid fa-ellipsis"></i>
+
                                     </button>
 
                                 </td>
@@ -543,7 +644,8 @@
                             </tr>
 
 
-                            <!-- Product 5 -->
+
+                            <!-- KIT 4 -->
                             <tr>
 
                                 <td>
@@ -551,12 +653,22 @@
                                     <div class="table-product">
 
                                         <div class="table-product-icon lavender-icon">
-                                            <i class="fa-solid fa-circle-dot"></i>
+
+                                            <i class="fa-solid fa-heart-pulse"></i>
+
                                         </div>
 
+
                                         <div>
-                                            <strong>Hormonal IUD</strong>
-                                            <span>Product ID: AFRA-P005</span>
+
+                                            <strong>
+                                                HIV Self-Test Kit
+                                            </strong>
+
+                                            <span>
+                                                Kit ID: AFRA-TK004
+                                            </span>
+
                                         </div>
 
                                     </div>
@@ -565,7 +677,7 @@
 
 
                                 <td>
-                                    Contraception
+                                    HIV
                                 </td>
 
 
@@ -576,9 +688,92 @@
 
                                 <td>
 
-                                    <span class="table-status status-active">
+                                    <span
+                                        class="table-status status-review"
+                                    >
+
                                         <i class="fa-solid fa-circle"></i>
+
+                                        Review
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    02 Aug 2026
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="table-action"
+                                        aria-label="Test kit options"
+                                    >
+
+                                        <i class="fa-solid fa-ellipsis"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- KIT 5 -->
+                            <tr>
+
+                                <td>
+
+                                    <div class="table-product">
+
+                                        <div class="table-product-icon green-icon">
+
+                                            <i class="fa-solid fa-flask"></i>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <strong>
+                                                General Health Test Kit
+                                            </strong>
+
+                                            <span>
+                                                Kit ID: AFRA-TK005
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    General testing
+                                </td>
+
+
+                                <td>
+                                    AFRA Health
+                                </td>
+
+
+                                <td>
+
+                                    <span
+                                        class="table-status status-active"
+                                    >
+
+                                        <i class="fa-solid fa-circle"></i>
+
                                         Active
+
                                     </span>
 
                                 </td>
@@ -593,9 +788,11 @@
 
                                     <button
                                         class="table-action"
-                                        aria-label="Product options"
+                                        aria-label="Test kit options"
                                     >
+
                                         <i class="fa-solid fa-ellipsis"></i>
+
                                     </button>
 
                                 </td>
@@ -609,36 +806,54 @@
                 </div>
 
 
-                <!-- Empty State -->
-                <div class="empty-state" id="productsEmptyState">
+
+                <!-- EMPTY STATE -->
+                <div
+                    class="empty-state"
+                    id="testKitsEmptyState"
+                >
 
                     <div class="empty-state-icon">
-                        <i class="fa-solid fa-box-open"></i>
+
+                        <i class="fa-solid fa-vial"></i>
+
                     </div>
 
-                    <h3>No products found</h3>
+
+                    <h3>
+                        No test kits found
+                    </h3>
+
 
                     <p>
-                        Try changing your search or add a new product.
+                        Try changing your search or add a
+                        new test kit.
                     </p>
+
 
                     <button class="btn btn-primary">
 
                         <i class="fa-solid fa-plus"></i>
 
-                        Add product
+                        Add test kit
 
                     </button>
 
                 </div>
 
 
-                <!-- Pagination -->
+
+                <!-- FOOTER -->
                 <div class="table-footer">
 
                     <span>
-                        Showing <strong>1–5</strong> of
-                        <strong>36</strong> products
+
+                        Showing
+                        <strong>1–5</strong>
+                        of
+                        <strong>18</strong>
+                        test kits
+
                     </span>
 
 
@@ -649,32 +864,36 @@
                             disabled
                             aria-label="Previous page"
                         >
+
                             <i class="fa-solid fa-chevron-left"></i>
+
                         </button>
 
-                        <button class="pagination-button active">
+
+                        <button
+                            class="pagination-button active"
+                        >
                             1
                         </button>
+
 
                         <button class="pagination-button">
                             2
                         </button>
 
+
                         <button class="pagination-button">
                             3
                         </button>
 
-                        <span>...</span>
-
-                        <button class="pagination-button">
-                            8
-                        </button>
 
                         <button
                             class="pagination-button"
                             aria-label="Next page"
                         >
+
                             <i class="fa-solid fa-chevron-right"></i>
+
                         </button>
 
                     </div>
@@ -684,22 +903,30 @@
             </section>
 
 
-            <!-- Product Information Notice -->
+
+            <!-- INFORMATION -->
             <section class="health-information-card">
 
                 <div class="health-information-icon">
-                    <i class="fa-solid fa-circle-info"></i>
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
                 </div>
+
 
                 <div>
 
-                    <h3>Product information</h3>
+                    <h3>
+                        Test-kit information
+                    </h3>
+
 
                     <p>
-                        Product information displayed to users should be
-                        accurate, current and appropriately reviewed before
-                        publication. Healthcare products should not be added
-                        without the necessary authorization and verification.
+                        Test-kit information should be verified
+                        before being made available to users.
+                        Instructions, manufacturer details and
+                        other health-related information should
+                        be kept accurate and up to date.
                     </p>
 
                 </div>
@@ -707,27 +934,34 @@
             </section>
 
 
-            <!-- Add Product Modal -->
-            <div class="modal-overlay" id="productModal">
+
+            <!-- ADD TEST KIT MODAL -->
+            <div
+                class="modal-overlay"
+                id="testKitModal"
+            >
 
                 <div class="modal">
+
 
                     <div class="modal-header">
 
                         <div>
 
                             <span class="section-label">
-                                PRODUCT MANAGEMENT
+                                TEST KIT MANAGEMENT
                             </span>
 
-                            <h2>Add product</h2>
+                            <h2>
+                                Add test kit
+                            </h2>
 
                         </div>
 
 
                         <button
                             class="modal-close"
-                            id="closeProductModal"
+                            id="closeTestKitModal"
                             aria-label="Close"
                         >
 
@@ -738,23 +972,27 @@
                     </div>
 
 
-                    <form id="productForm">
+
+                    <form id="testKitForm">
+
 
                         <div class="form-group">
 
-                            <label for="productName">
-                                Product name
+                            <label for="testKitName">
+                                Test kit name
                             </label>
+
 
                             <div class="input-wrapper">
 
-                                <i class="fa-solid fa-box"></i>
+                                <i class="fa-solid fa-vial"></i>
+
 
                                 <input
                                     type="text"
-                                    id="productName"
-                                    name="productName"
-                                    placeholder="Enter product name"
+                                    id="testKitName"
+                                    name="testKitName"
+                                    placeholder="Enter test kit name"
                                     required
                                 >
 
@@ -763,44 +1001,43 @@
                         </div>
 
 
+
                         <div class="form-group">
 
-                            <label for="productCategory">
-                                Category
+                            <label for="testKitType">
+                                Test type
                             </label>
+
 
                             <div class="input-wrapper">
 
-                                <i class="fa-solid fa-layer-group"></i>
+                                <i class="fa-solid fa-flask"></i>
+
 
                                 <select
-                                    id="productCategory"
-                                    name="category"
+                                    id="testKitType"
+                                    name="testType"
                                     required
                                 >
 
                                     <option value="">
-                                        Select category
+                                        Select test type
                                     </option>
 
-                                    <option value="contraception">
-                                        Contraception
+                                    <option value="pregnancy">
+                                        Pregnancy
                                     </option>
 
-                                    <option value="barrier">
-                                        Barrier method
+                                    <option value="ovulation">
+                                        Ovulation
                                     </option>
 
-                                    <option value="emergency">
-                                        Emergency contraception
+                                    <option value="sti">
+                                        STI
                                     </option>
 
-                                    <option value="menstrual">
-                                        Menstrual health
-                                    </option>
-
-                                    <option value="testing">
-                                        Testing
+                                    <option value="hiv">
+                                        HIV
                                     </option>
 
                                     <option value="other">
@@ -814,19 +1051,22 @@
                         </div>
 
 
+
                         <div class="form-group">
 
-                            <label for="manufacturer">
+                            <label for="testKitManufacturer">
                                 Manufacturer
                             </label>
+
 
                             <div class="input-wrapper">
 
                                 <i class="fa-solid fa-building"></i>
 
+
                                 <input
                                     type="text"
-                                    id="manufacturer"
+                                    id="testKitManufacturer"
                                     name="manufacturer"
                                     placeholder="Enter manufacturer"
                                     required
@@ -837,23 +1077,27 @@
                         </div>
 
 
+
                         <div class="form-row">
+
 
                             <div class="form-group">
 
-                                <label for="productCode">
-                                    Product code
+                                <label for="testKitCode">
+                                    Kit code
                                 </label>
+
 
                                 <div class="input-wrapper">
 
                                     <i class="fa-solid fa-barcode"></i>
 
+
                                     <input
                                         type="text"
-                                        id="productCode"
-                                        name="productCode"
-                                        placeholder="AFRA-P000"
+                                        id="testKitCode"
+                                        name="kitCode"
+                                        placeholder="AFRA-TK000"
                                     >
 
                                 </div>
@@ -861,18 +1105,21 @@
                             </div>
 
 
+
                             <div class="form-group">
 
-                                <label for="productStatus">
+                                <label for="testKitStatus">
                                     Status
                                 </label>
+
 
                                 <div class="input-wrapper">
 
                                     <i class="fa-solid fa-circle-check"></i>
 
+
                                     <select
-                                        id="productStatus"
+                                        id="testKitStatus"
                                         name="status"
                                     >
 
@@ -897,20 +1144,41 @@
                         </div>
 
 
+
                         <div class="form-group">
 
-                            <label for="productDescription">
+                            <label for="testKitDescription">
                                 Description
                             </label>
 
+
                             <textarea
-                                id="productDescription"
+                                id="testKitDescription"
                                 name="description"
                                 rows="4"
-                                placeholder="Enter product description..."
+                                placeholder="Enter test-kit description..."
                             ></textarea>
 
                         </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="testKitInstructions">
+                                Instructions
+                            </label>
+
+
+                            <textarea
+                                id="testKitInstructions"
+                                name="instructions"
+                                rows="4"
+                                placeholder="Enter approved usage instructions..."
+                            ></textarea>
+
+                        </div>
+
 
 
                         <div class="modal-actions">
@@ -918,17 +1186,20 @@
                             <button
                                 type="button"
                                 class="btn btn-light"
-                                id="cancelProduct"
+                                id="cancelTestKit"
                             >
+
                                 Cancel
+
                             </button>
+
 
                             <button
                                 type="submit"
                                 class="btn btn-primary"
                             >
 
-                                Save product
+                                Save test kit
 
                                 <i class="fa-solid fa-check"></i>
 
@@ -948,7 +1219,8 @@
 
 
     <script src="../src/script.js"></script>
-    <script src="../src/management-products.js"></script>
+
+    <script src="../src/management-test-kits.js"></script>
 
 </body>
 </html>

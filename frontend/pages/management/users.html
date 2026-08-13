@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users | AFRA Connect</title>
+    <meta name="description" content="Manage AFRA Connect users.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <a href="../../index.html" class="logo">
+                <span class="logo-afra">AFRA</span>
+                <span class="logo-connect">Connect</span>
+            </a>
+
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <span class="sidebar-section-title">
+                MANAGEMENT
+            </span>
+
+
+            <a href="dashboard.html" class="sidebar-link">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="products.html" class="sidebar-link">
+
+                <i class="fa-solid fa-box"></i>
+
+                <span>Products</span>
+
+            </a>
+
+
+            <a href="test-kits.html" class="sidebar-link">
+
+                <i class="fa-solid fa-vial"></i>
+
+                <span>Test Kits</span>
+
+            </a>
+
+
+            <a href="users.html" class="sidebar-link active">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>Users</span>
+
+            </a>
+
+
+            <span class="sidebar-section-title">
+                ACCOUNT
+            </span>
+
+
+            <a href="profile.html" class="sidebar-link">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a href="#" class="sidebar-link">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="#"
+                class="sidebar-link logout-link"
+                id="logoutBtn"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN -->
+    <div class="dashboard-main">
+
+
+        <!-- HEADER -->
+        <header class="dashboard-header">
+
+            <div class="dashboard-header-left">
+
+                <button
+                    class="mobile-sidebar-btn"
+                    id="mobileSidebarBtn"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div>
+
+                    <span class="dashboard-greeting">
+                        MANAGEMENT PORTAL
+                    </span>
+
+                    <h1>Users</h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-header-right">
+
+                <button
+                    class="notification-btn"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <a
+                    href="profile.html"
+                    class="user-profile"
+                >
+
+                    <div class="user-avatar">
+                        AD
+                    </div>
+
+
+                    <div class="user-profile-info">
+
+                        <strong>Admin</strong>
+
+                        <span>Management</span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+
+        <main class="dashboard-content">
+
+
+            <!-- PAGE INTRO -->
+            <section class="page-intro">
+
+                <div>
+
+                    <span class="section-label">
+                        USER MANAGEMENT
+                    </span>
+
+                    <h2>Registered users</h2>
+
+                    <p>
+                        View and manage registered AFRA Connect
+                        accounts and their platform activity.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- STATISTICS -->
+            <section class="overview-grid">
+
+
+                <div class="overview-card">
+
+                    <div class="overview-card-top">
+
+                        <div class="overview-icon lavender-icon">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+
+                        <span class="overview-status active-status">
+                            +12%
+                        </span>
+
+                    </div>
+
+
+                    <span class="overview-label">
+                        TOTAL USERS
+                    </span>
+
+
+                    <h3>1,248</h3>
+
+
+                    <p>
+                        Registered accounts
+                    </p>
+
+                </div>
+
+
+
+                <div class="overview-card">
+
+                    <div class="overview-card-top">
+
+                        <div class="overview-icon green-icon">
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                        </div>
+
+
+                        <span class="overview-status active-status">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <span class="overview-label">
+                        ACTIVE USERS
+                    </span>
+
+
+                    <h3>1,162</h3>
+
+
+                    <p>
+                        Users currently active
+                    </p>
+
+                </div>
+
+
+
+                <div class="overview-card">
+
+                    <div class="overview-card-top">
+
+                        <div class="overview-icon pink-icon">
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                        </div>
+
+
+                        <span class="overview-status">
+                            This month
+                        </span>
+
+                    </div>
+
+
+                    <span class="overview-label">
+                        NEW USERS
+                    </span>
+
+
+                    <h3>86</h3>
+
+
+                    <p>
+                        New registrations this month
+                    </p>
+
+                </div>
+
+
+
+                <div class="overview-card">
+
+                    <div class="overview-card-top">
+
+                        <div class="overview-icon lavender-icon">
+
+                            <i class="fa-solid fa-user-clock"></i>
+
+                        </div>
+
+
+                        <span class="overview-status">
+                            Review
+                        </span>
+
+                    </div>
+
+
+                    <span class="overview-label">
+                        INACTIVE
+                    </span>
+
+
+                    <h3>86</h3>
+
+
+                    <p>
+                        Accounts currently inactive
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- USERS PANEL -->
+            <section class="dashboard-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            USER DIRECTORY
+                        </span>
+
+                        <h2>All users</h2>
+
+                    </div>
+
+
+                    <div class="panel-actions">
+
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="userSearch"
+                                placeholder="Search users..."
+                            >
+
+                        </div>
+
+
+                        <button
+                            class="filter-button"
+                            id="userFilterBtn"
+                        >
+
+                            <i class="fa-solid fa-filter"></i>
+
+                            Filter
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FILTERS -->
+                <div
+                    class="filter-panel"
+                    id="userFilterPanel"
+                >
+
+                    <div class="filter-group">
+
+                        <label for="userStatusFilter">
+                            Status
+                        </label>
+
+                        <select id="userStatusFilter">
+
+                            <option value="all">
+                                All users
+                            </option>
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="inactive">
+                                Inactive
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="userGenderFilter">
+                            Gender
+                        </label>
+
+                        <select id="userGenderFilter">
+
+                            <option value="all">
+                                All
+                            </option>
+
+                            <option value="female">
+                                Female
+                            </option>
+
+                            <option value="male">
+                                Male
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-light"
+                        id="clearUserFilters"
+                    >
+
+                        Clear filters
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- TABLE -->
+                <div class="table-container">
+
+                    <table class="data-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>USER</th>
+
+                                <th>EMAIL</th>
+
+                                <th>ROLE</th>
+
+                                <th>STATUS</th>
+
+                                <th>JOINED</th>
+
+                                <th></th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="usersTable">
+
+
+                            <!-- USER 1 -->
+                            <tr>
+
+                                <td>
+
+                                    <div class="table-product">
+
+                                        <div class="user-table-avatar">
+                                            AJ
+                                        </div>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Ama Johnson
+                                            </strong>
+
+                                            <span>
+                                                User ID: AFR-1001
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    ama.johnson@example.com
+                                </td>
+
+
+                                <td>
+                                    User
+                                </td>
+
+
+                                <td>
+
+                                    <span
+                                        class="table-status status-active"
+                                    >
+
+                                        <i class="fa-solid fa-circle"></i>
+
+                                        Active
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    12 Aug 2026
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="table-action user-action-btn"
+                                        aria-label="User options"
+                                        data-user="Ama Johnson"
+                                    >
+
+                                        <i class="fa-solid fa-ellipsis"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- USER 2 -->
+                            <tr>
+
+                                <td>
+
+                                    <div class="table-product">
+
+                                        <div class="user-table-avatar">
+                                            EA
+                                        </div>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Efua Addo
+                                            </strong>
+
+                                            <span>
+                                                User ID: AFR-1002
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    efua.addo@example.com
+                                </td>
+
+
+                                <td>
+                                    User
+                                </td>
+
+
+                                <td>
+
+                                    <span
+                                        class="table-status status-active"
+                                    >
+
+                                        <i class="fa-solid fa-circle"></i>
+
+                                        Active
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    11 Aug 2026
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="table-action user-action-btn"
+                                        aria-label="User options"
+                                        data-user="Efua Addo"
+                                    >
+
+                                        <i class="fa-solid fa-ellipsis"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- USER 3 -->
+                            <tr>
+
+                                <td>
+
+                                    <div class="table-product">
+
+                                        <div class="user-table-avatar">
+                                            KA
+                                        </div>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Kofi Asare
+                                            </strong>
+
+                                            <span>
+                                                User ID: AFR-1003
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    kofi.asare@example.com
+                                </td>
+
+
+                                <td>
+                                    User
+                                </td>
+
+
+                                <td>
+
+                                    <span
+                                        class="table-status status-active"
+                                    >
+
+                                        <i class="fa-solid fa-circle"></i>
+
+                                        Active
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    10 Aug 2026
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="table-action user-action-btn"
+                                        aria-label="User options"
+                                        data-user="Kofi Asare"
+                                    >
+
+                                        <i class="fa-solid fa-ellipsis"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- USER 4 -->
+                            <tr>
+
+                                <td>
+
+                                    <div class="table-product">
+
+                                        <div class="user-table-avatar">
+                                            YA
+                                        </div>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Yaa Mensah
+                                            </strong>
+
+                                            <span>
+                                                User ID: AFR-1004
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    yaa.mensah@example.com
+                                </td>
+
+
+                                <td>
+                                    User
+                                </td>
+
+
+                                <td>
+
+                                    <span
+                                        class="table-status status-inactive"
+                                    >
+
+                                        <i class="fa-solid fa-circle"></i>
+
+                                        Inactive
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    05 Aug 2026
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="table-action user-action-btn"
+                                        aria-label="User options"
+                                        data-user="Yaa Mensah"
+                                    >
+
+                                        <i class="fa-solid fa-ellipsis"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <!-- USER 5 -->
+                            <tr>
+
+                                <td>
+
+                                    <div class="table-product">
+
+                                        <div class="user-table-avatar">
+                                            NA
+                                        </div>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Nana Akua
+                                            </strong>
+
+                                            <span>
+                                                User ID: AFR-1005
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    nana.akua@example.com
+                                </td>
+
+
+                                <td>
+                                    User
+                                </td>
+
+
+                                <td>
+
+                                    <span
+                                        class="table-status status-active"
+                                    >
+
+                                        <i class="fa-solid fa-circle"></i>
+
+                                        Active
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    01 Aug 2026
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="table-action user-action-btn"
+                                        aria-label="User options"
+                                        data-user="Nana Akua"
+                                    >
+
+                                        <i class="fa-solid fa-ellipsis"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- EMPTY STATE -->
+                <div
+                    class="empty-state"
+                    id="usersEmptyState"
+                >
+
+                    <div class="empty-state-icon">
+
+                        <i class="fa-solid fa-users-slash"></i>
+
+                    </div>
+
+
+                    <h3>
+                        No users found
+                    </h3>
+
+
+                    <p>
+                        Try changing your search or filters.
+                    </p>
+
+                </div>
+
+
+
+                <!-- FOOTER -->
+                <div class="table-footer">
+
+                    <span>
+
+                        Showing
+                        <strong>1–5</strong>
+                        of
+                        <strong>1,248</strong>
+                        users
+
+                    </span>
+
+
+                    <div class="pagination">
+
+                        <button
+                            class="pagination-button"
+                            disabled
+                            aria-label="Previous page"
+                        >
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+
+                        <button
+                            class="pagination-button active"
+                        >
+                            1
+                        </button>
+
+
+                        <button class="pagination-button">
+                            2
+                        </button>
+
+
+                        <button class="pagination-button">
+                            3
+                        </button>
+
+
+                        <span>...</span>
+
+
+                        <button class="pagination-button">
+                            250
+                        </button>
+
+
+                        <button
+                            class="pagination-button"
+                            aria-label="Next page"
+                        >
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- PRIVACY NOTICE -->
+            <section class="health-information-card">
+
+                <div class="health-information-icon">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        User privacy and confidentiality
+                    </h3>
+
+
+                    <p>
+                        AFRA Connect should protect user privacy
+                        and confidential health information.
+                        Management access must be controlled by
+                        permissions, and sensitive health information
+                        should only be accessed when necessary and
+                        authorized.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- USER DETAILS MODAL -->
+            <div
+                class="modal-overlay"
+                id="userModal"
+            >
+
+                <div class="modal">
+
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                USER INFORMATION
+                            </span>
+
+                            <h2 id="modalUserName">
+                                User details
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            class="modal-close"
+                            id="closeUserModal"
+                            aria-label="Close"
+                        >
+
+                            <i class="fa-solid fa-xmark"></i>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="user-detail-content">
+
+
+                        <div class="user-detail-profile">
+
+                            <div
+                                class="large-user-avatar"
+                                id="modalUserAvatar"
+                            >
+                                AJ
+                            </div>
+
+
+                            <div>
+
+                                <h3 id="modalUserDisplayName">
+                                    Ama Johnson
+                                </h3>
+
+                                <span>
+                                    AFRA Connect User
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="user-detail-grid">
+
+
+                            <div class="user-detail-item">
+
+                                <span>
+                                    USER ID
+                                </span>
+
+                                <strong id="modalUserId">
+                                    AFR-1001
+                                </strong>
+
+                            </div>
+
+
+                            <div class="user-detail-item">
+
+                                <span>
+                                    STATUS
+                                </span>
+
+                                <strong>
+                                    <span
+                                        class="table-status status-active"
+                                    >
+                                        Active
+                                    </span>
+                                </strong>
+
+                            </div>
+
+
+                            <div class="user-detail-item">
+
+                                <span>
+                                    EMAIL
+                                </span>
+
+                                <strong id="modalUserEmail">
+                                    ama.johnson@example.com
+                                </strong>
+
+                            </div>
+
+
+                            <div class="user-detail-item">
+
+                                <span>
+                                    ROLE
+                                </span>
+
+                                <strong>
+                                    User
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="user-detail-warning">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <p>
+                                Health-related information is
+                                confidential. Do not access or
+                                disclose sensitive information
+                                without appropriate authorization.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-light"
+                            id="closeUserDetails"
+                        >
+                            Close
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="viewUserActivity"
+                        >
+
+                            View activity
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+
+    <script src="../src/script.js"></script>
+
+    <script src="../src/management-users.js"></script>
+
+</body>
+</html>

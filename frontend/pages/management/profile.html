@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | AFRA Connect</title>
+    <meta name="description" content="Manage your AFRA Connect management profile.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="dashboard-page">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="../../index.html" class="logo">
+                <span class="logo-afra">AFRA</span>
+                <span class="logo-connect">Connect</span>
+            </a>
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <span class="sidebar-section-title">MANAGEMENT</span>
+
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="products.html" class="sidebar-link">
+                <i class="fa-solid fa-box"></i>
+                <span>Products</span>
+            </a>
+
+            <a href="test-kits.html" class="sidebar-link">
+                <i class="fa-solid fa-vial"></i>
+                <span>Test Kits</span>
+            </a>
+
+            <a href="users.html" class="sidebar-link">
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+            <span class="sidebar-section-title">ACCOUNT</span>
+
+            <a href="profile.html" class="sidebar-link active">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#" class="sidebar-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="sidebar-link logout-link" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="dashboard-main">
+
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="dashboard-header-left">
+                <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <span class="dashboard-greeting">MANAGEMENT PORTAL</span>
+                    <h1>My Profile</h1>
+                </div>
+            </div>
+
+            <div class="dashboard-header-right">
+                <button class="notification-btn" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <a href="profile.html" class="user-profile">
+                    <div class="user-avatar">AD</div>
+                    <div class="user-profile-info">
+                        <strong>Admin</strong>
+                        <span>Management</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+
+            <!-- Intro -->
+            <section class="page-intro">
+                <div>
+                    <span class="section-label">ACCOUNT</span>
+                    <h2>My profile</h2>
+                    <p>View and manage your AFRA Connect management account.</p>
+                </div>
+            </section>
+
+            <!-- Profile Layout -->
+            <section class="profile-layout">
+
+                <!-- Profile Card -->
+                <div class="dashboard-panel profile-card">
+                    <div class="profile-cover"></div>
+
+                    <div class="profile-main">
+                        <div class="profile-avatar-large">AD</div>
+
+                        <div class="profile-heading">
+                            <h2>Admin</h2>
+                            <p>Management Administrator</p>
+                            <span class="table-status status-active">
+                                <i class="fa-solid fa-circle"></i>
+                                Active
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-list">
+                        <div class="profile-info-item">
+                            <div class="profile-info-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span>Email</span>
+                                <strong>admin@afraconnect.com</strong>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-item">
+                            <div class="profile-info-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span>Phone</span>
+                                <strong>+233 00 000 0000</strong>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-item">
+                            <div class="profile-info-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <span>Account role</span>
+                                <strong>Administrator</strong>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-item">
+                            <div class="profile-info-icon">
+                                <i class="fa-solid fa-calendar"></i>
+                            </div>
+                            <div>
+                                <span>Account created</span>
+                                <strong>01 June 2026</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Profile -->
+                <div class="dashboard-panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">PERSONAL INFORMATION</span>
+                            <h2>Edit profile</h2>
+                        </div>
+                    </div>
+
+                    <form id="profileForm">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First name</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="firstName" value="Admin">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last name</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="lastName" value="Account">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileEmail">Email address</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="profileEmail" value="admin@afraconnect.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profilePhone">Phone number</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="tel" id="profilePhone" value="+233 00 000 0000">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileRole">Role</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <input type="text" id="profileRole" value="Administrator" disabled>
+                            </div>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button type="button" class="btn btn-light" id="cancelProfile">
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                Save changes
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Security -->
+            <section class="dashboard-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <span class="panel-label">SECURITY</span>
+                        <h2>Account security</h2>
+                    </div>
+                </div>
+
+                <div class="security-list">
+
+                    <div class="security-item">
+                        <div class="security-item-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <div class="security-item-content">
+                            <strong>Password</strong>
+                            <span>Last changed recently</span>
+                        </div>
+
+                        <button class="btn btn-light" id="changePasswordBtn">
+                            Change password
+                        </button>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="security-item-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div class="security-item-content">
+                            <strong>Two-factor authentication</strong>
+                            <span>Add another layer of protection to your account.</span>
+                        </div>
+
+                        <button class="btn btn-light" id="twoFactorBtn">
+                            Enable
+                        </button>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="security-item-icon">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+
+                        <div class="security-item-content">
+                            <strong>Recent login activity</strong>
+                            <span>Review devices that have accessed this account.</span>
+                        </div>
+
+                        <button class="btn btn-light" id="loginActivityBtn">
+                            View activity
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Permissions -->
+            <section class="health-information-card">
+                <div class="health-information-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div>
+                    <h3>Management permissions</h3>
+                    <p>
+                        Your permissions determine which areas of AFRA Connect
+                        you can access. Sensitive user and health information
+                        should only be available to authorized personnel.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Change Password Modal -->
+            <div class="modal-overlay" id="passwordModal">
+                <div class="modal">
+
+                    <div class="modal-header">
+                        <div>
+                            <span class="section-label">SECURITY</span>
+                            <h2>Change password</h2>
+                        </div>
+
+                        <button class="modal-close" id="closePasswordModal" aria-label="Close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <form id="passwordForm">
+
+                        <div class="form-group">
+                            <label for="currentPassword">Current password</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="currentPassword" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newPassword">New password</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-key"></i>
+                                <input type="password" id="newPassword" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm new password</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-key"></i>
+                                <input type="password" id="confirmPassword" required>
+                            </div>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button type="button" class="btn btn-light" id="cancelPassword">
+                                Cancel
+                            </button>
+
+                            <button type="submit" class="btn btn-primary">
+                                Update password
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../src/script.js"></script>
+    <script src="../src/management-profile.js"></script>
+
+</body>
+</html>

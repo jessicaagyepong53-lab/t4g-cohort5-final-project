@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Control | AFRA Connect</title>
+    <meta name="description" content="Manage your birth-control information and reminders with AFRA Connect.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="../../index.html" class="logo">
+                <span class="logo-afra">AFRA</span>
+                <span class="logo-connect">Connect</span>
+            </a>
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <span class="sidebar-section-title">MAIN</span>
+
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="birth-control.html" class="sidebar-link active">
+                <i class="fa-solid fa-pills"></i>
+                <span>Birth Control</span>
+            </a>
+
+            <a href="test-kits.html" class="sidebar-link">
+                <i class="fa-solid fa-vial"></i>
+                <span>Test Kits</span>
+            </a>
+
+            <a href="test-results.html" class="sidebar-link">
+                <i class="fa-solid fa-file-medical"></i>
+                <span>Test Results</span>
+            </a>
+
+            <span class="sidebar-section-title">ACCOUNT</span>
+
+            <a href="profile.html" class="sidebar-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#" class="sidebar-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="sidebar-link logout-link" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <div class="dashboard-main">
+        <header class="dashboard-header">
+            <div class="dashboard-header-left">
+                <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <span class="dashboard-greeting">YOUR HEALTH</span>
+                    <h1>Birth Control</h1>
+                </div>
+            </div>
+
+            <div class="dashboard-header-right">
+                <button class="notification-btn" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <a href="profile.html" class="user-profile">
+                    <div class="user-avatar">AJ</div>
+                    <div class="user-profile-info">
+                        <strong>Afia</strong>
+                        <span>My account</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+
+            <!-- Page Introduction -->
+            <section class="page-intro">
+                <div>
+                    <span class="section-label">BIRTH CONTROL</span>
+                    <h2>Manage your birth-control information</h2>
+                    <p>Keep track of your current method, important dates and reminders.</p>
+                </div>
+
+                <button class="btn btn-primary" id="addBirthControlBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add method
+                </button>
+            </section>
+
+            <!-- Current Method -->
+            <section class="birth-control-main-card">
+                <div class="birth-control-card-header">
+                    <div class="birth-control-method-icon">
+                        <i class="fa-solid fa-pills"></i>
+                    </div>
+
+                    <div class="birth-control-method-title">
+                        <span class="card-label">CURRENT METHOD</span>
+                        <h2>Oral contraceptive pill</h2>
+                        <span class="active-method">
+                            <i class="fa-solid fa-circle"></i>
+                            Active
+                        </span>
+                    </div>
+
+                    <button class="icon-button" id="editBirthControlBtn" aria-label="Edit birth-control method">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                </div>
+
+                <div class="birth-control-details">
+                    <div class="detail-item">
+                        <span>Method</span>
+                        <strong>Combined oral contraceptive</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Started</span>
+                        <strong>05 August 2026</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Reminder time</span>
+                        <strong>8:00 PM</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Next reminder</span>
+                        <strong>Today, 8:00 PM</strong>
+                    </div>
+                </div>
+
+                <div class="next-reminder">
+                    <div class="next-reminder-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <span>UPCOMING REMINDER</span>
+                        <strong>Take your birth-control pill</strong>
+                        <p>Today at 8:00 PM</p>
+                    </div>
+
+                    <button class="btn btn-light btn-small">
+                        Mark as taken
+                    </button>
+                </div>
+            </section>
+
+            <!-- Information Cards -->
+            <section class="birth-control-grid">
+
+                <div class="dashboard-panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">REMINDERS</span>
+                            <h2>Upcoming</h2>
+                        </div>
+
+                        <button class="panel-more-btn" aria-label="More options">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </div>
+
+                    <div class="reminder-list">
+                        <div class="reminder-item">
+                            <div class="reminder-item-icon pink-icon">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+
+                            <div class="reminder-item-content">
+                                <strong>Daily pill</strong>
+                                <span>Today · 8:00 PM</span>
+                            </div>
+
+                            <span class="reminder-badge">Today</span>
+                        </div>
+
+                        <div class="reminder-item">
+                            <div class="reminder-item-icon pink-icon">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+
+                            <div class="reminder-item-content">
+                                <strong>Daily pill</strong>
+                                <span>Tomorrow · 8:00 PM</span>
+                            </div>
+
+                            <span class="reminder-badge upcoming">Tomorrow</span>
+                        </div>
+
+                        <div class="reminder-item">
+                            <div class="reminder-item-icon pink-icon">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+
+                            <div class="reminder-item-content">
+                                <strong>Daily pill</strong>
+                                <span>14 Aug 2026 · 8:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">HISTORY</span>
+                            <h2>Recent activity</h2>
+                        </div>
+
+                        <button class="panel-more-btn" aria-label="More options">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </div>
+
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon green-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                            <div class="activity-content">
+                                <strong>Reminder completed</strong>
+                                <span>11 Aug 2026 · 8:00 PM</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon green-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                            <div class="activity-content">
+                                <strong>Reminder completed</strong>
+                                <span>10 Aug 2026 · 8:00 PM</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon lavender-icon">
+                                <i class="fa-solid fa-pen"></i>
+                            </div>
+
+                            <div class="activity-content">
+                                <strong>Method updated</strong>
+                                <span>05 Aug 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Important Information -->
+            <section class="health-information-card">
+                <div class="health-information-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+
+                <div>
+                    <h3>Important information</h3>
+                    <p>
+                        AFRA Connect helps you organize your health information.
+                        It does not replace professional medical advice.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Add Method Modal -->
+            <div class="modal-overlay" id="birthControlModal">
+                <div class="modal">
+                    <div class="modal-header">
+                        <div>
+                            <span class="section-label">BIRTH CONTROL</span>
+                            <h2>Add a method</h2>
+                        </div>
+
+                        <button class="modal-close" id="closeBirthControlModal" aria-label="Close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <form id="birthControlForm">
+
+                        <div class="form-group">
+                            <label for="birthControlMethod">Method</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-pills"></i>
+                                <select id="birthControlMethod" name="method" required>
+                                    <option value="">Select a method</option>
+                                    <option value="pill">Oral contraceptive pill</option>
+                                    <option value="condom">Condom</option>
+                                    <option value="injection">Injection</option>
+                                    <option value="implant">Implant</option>
+                                    <option value="iud">IUD</option>
+                                    <option value="patch">Contraceptive patch</option>
+                                    <option value="ring">Vaginal ring</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="startDate">Start date</label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-calendar"></i>
+                                <input type="date" id="startDate" name="startDate" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reminderTime">Reminder time</label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-clock"></i>
+                                <input type="time" id="reminderTime" name="reminderTime">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthControlNotes">Notes</label>
+                            <textarea id="birthControlNotes" name="notes" rows="3" placeholder="Add any notes you want to remember..."></textarea>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button type="button" class="btn btn-light" id="cancelBirthControl">
+                                Cancel
+                            </button>
+
+                            <button type="submit" class="btn btn-primary">
+                                Save method
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../src/script.js"></script>
+    <script src="../src/user-birth-control.js"></script>
+</body>
+</html>

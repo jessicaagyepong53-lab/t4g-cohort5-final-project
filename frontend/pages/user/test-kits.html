@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Kits | AFRA Connect</title>
+    <meta name="description" content="Register and manage your health test kits with AFRA Connect.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="../../index.html" class="logo">
+                <span class="logo-afra">AFRA</span>
+                <span class="logo-connect">Connect</span>
+            </a>
+
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <span class="sidebar-section-title">MAIN</span>
+
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="birth-control.html" class="sidebar-link">
+                <i class="fa-solid fa-pills"></i>
+                <span>Birth Control</span>
+            </a>
+
+            <a href="test-kits.html" class="sidebar-link active">
+                <i class="fa-solid fa-vial"></i>
+                <span>Test Kits</span>
+            </a>
+
+            <a href="test-results.html" class="sidebar-link">
+                <i class="fa-solid fa-file-medical"></i>
+                <span>Test Results</span>
+            </a>
+
+            <span class="sidebar-section-title">ACCOUNT</span>
+
+            <a href="profile.html" class="sidebar-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#" class="sidebar-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="sidebar-link logout-link" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div class="dashboard-header-left">
+                <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <span class="dashboard-greeting">YOUR HEALTH</span>
+                    <h1>Test Kits</h1>
+                </div>
+            </div>
+
+            <div class="dashboard-header-right">
+                <button class="notification-btn" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <a href="profile.html" class="user-profile">
+                    <div class="user-avatar">AJ</div>
+                    <div class="user-profile-info">
+                        <strong>Afia</strong>
+                        <span>My account</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+
+            <!-- Page Introduction -->
+            <section class="page-intro">
+                <div>
+                    <span class="section-label">TEST KITS</span>
+                    <h2>Manage your test kits</h2>
+                    <p>Register your test kits and keep their information available for your records.</p>
+                </div>
+
+                <button class="btn btn-primary" id="addTestKitBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Register test kit
+                </button>
+            </section>
+
+            <!-- Test Kit Summary -->
+            <section class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon lavender-icon">
+                            <i class="fa-solid fa-vial"></i>
+                        </div>
+                        <span class="overview-status active-status">Active</span>
+                    </div>
+
+                    <span class="overview-label">REGISTERED KITS</span>
+                    <h3>2 Test Kits</h3>
+                    <p>Your registered test kits</p>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon green-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <span class="overview-status">1 completed</span>
+                    </div>
+
+                    <span class="overview-label">TESTS COMPLETED</span>
+                    <h3>1 Test</h3>
+                    <p>Result available in your records</p>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon pink-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <span class="overview-status">Upcoming</span>
+                    </div>
+
+                    <span class="overview-label">FOLLOW-UP</span>
+                    <h3>18 Aug 2026</h3>
+                    <p>Scheduled follow-up</p>
+                </div>
+            </section>
+
+            <!-- Registered Test Kits -->
+            <section class="dashboard-panel test-kits-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <span class="panel-label">MY TEST KITS</span>
+                        <h2>Registered kits</h2>
+                    </div>
+
+                    <div class="panel-actions">
+                        <button class="filter-button" id="testKitFilterBtn">
+                            <i class="fa-solid fa-filter"></i>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="test-kit-list">
+
+                    <!-- Test Kit 1 -->
+                    <article class="test-kit-card">
+
+                        <div class="test-kit-icon lavender-icon">
+                            <i class="fa-solid fa-vial"></i>
+                        </div>
+
+                        <div class="test-kit-info">
+                            <span class="test-kit-category">HOME TEST KIT</span>
+                            <h3>Pregnancy Test Kit</h3>
+
+                            <div class="test-kit-meta">
+                                <span>
+                                    <i class="fa-solid fa-barcode"></i>
+                                    Kit ID: AFRA-PT-00124
+                                </span>
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Registered: 08 Aug 2026
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="test-kit-status">
+                            <span class="status-badge status-active">
+                                Active
+                            </span>
+
+                            <button class="icon-button" aria-label="Test kit options">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                        </div>
+
+                    </article>
+
+                    <!-- Test Kit 2 -->
+                    <article class="test-kit-card">
+
+                        <div class="test-kit-icon green-icon">
+                            <i class="fa-solid fa-vial"></i>
+                        </div>
+
+                        <div class="test-kit-info">
+                            <span class="test-kit-category">HOME TEST KIT</span>
+                            <h3>Ovulation Test Kit</h3>
+
+                            <div class="test-kit-meta">
+                                <span>
+                                    <i class="fa-solid fa-barcode"></i>
+                                    Kit ID: AFRA-OT-00782
+                                </span>
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Registered: 12 Aug 2026
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="test-kit-status">
+                            <span class="status-badge status-pending">
+                                Not used
+                            </span>
+
+                            <button class="icon-button" aria-label="Test kit options">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <!-- Empty state -->
+                <div class="empty-state" id="testKitEmptyState">
+                    <div class="empty-state-icon">
+                        <i class="fa-solid fa-vial"></i>
+                    </div>
+
+                    <h3>No test kits registered</h3>
+
+                    <p>
+                        Register a test kit to keep track of its
+                        information and related test results.
+                    </p>
+
+                    <button class="btn btn-primary">
+                        <i class="fa-solid fa-plus"></i>
+                        Register test kit
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Registration Information -->
+            <section class="information-grid">
+
+                <div class="health-information-card">
+                    <div class="health-information-icon">
+                        <i class="fa-solid fa-barcode"></i>
+                    </div>
+
+                    <div>
+                        <h3>Why register a test kit?</h3>
+                        <p>
+                            Registering a kit helps you keep its identification
+                            information together with your health records.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="health-information-card">
+                    <div class="health-information-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <h3>Keep your information private</h3>
+                        <p>
+                            Only authorized access should be able to view
+                            your personal health information.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Register Test Kit Modal -->
+            <div class="modal-overlay" id="testKitModal">
+
+                <div class="modal">
+
+                    <div class="modal-header">
+                        <div>
+                            <span class="section-label">TEST KITS</span>
+                            <h2>Register a test kit</h2>
+                        </div>
+
+                        <button
+                            class="modal-close"
+                            id="closeTestKitModal"
+                            aria-label="Close"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <form id="testKitForm">
+
+                        <div class="form-group">
+                            <label for="testKitType">Test type</label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-vial"></i>
+
+                                <select
+                                    id="testKitType"
+                                    name="testKitType"
+                                    required
+                                >
+                                    <option value="">
+                                        Select test type
+                                    </option>
+
+                                    <option value="pregnancy">
+                                        Pregnancy test
+                                    </option>
+
+                                    <option value="ovulation">
+                                        Ovulation test
+                                    </option>
+
+                                    <option value="sti">
+                                        STI test
+                                    </option>
+
+                                    <option value="hiv">
+                                        HIV test
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="kitId">Kit ID / Serial number</label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-barcode"></i>
+
+                                <input
+                                    type="text"
+                                    id="kitId"
+                                    name="kitId"
+                                    placeholder="Enter kit ID"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="manufacturer">Manufacturer</label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-industry"></i>
+
+                                <input
+                                    type="text"
+                                    id="manufacturer"
+                                    name="manufacturer"
+                                    placeholder="Enter manufacturer name"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="purchaseDate">Purchase date</label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-calendar"></i>
+
+                                <input
+                                    type="date"
+                                    id="purchaseDate"
+                                    name="purchaseDate"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry date</label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-calendar-xmark"></i>
+
+                                <input
+                                    type="date"
+                                    id="expiryDate"
+                                    name="expiryDate"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="testKitNotes">Notes</label>
+
+                            <textarea
+                                id="testKitNotes"
+                                name="notes"
+                                rows="3"
+                                placeholder="Add any notes about this test kit..."
+                            ></textarea>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                id="cancelTestKit"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Register kit
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../src/script.js"></script>
+    <script src="../src/test-kits.js"></script>
+
+</body>
+</html>

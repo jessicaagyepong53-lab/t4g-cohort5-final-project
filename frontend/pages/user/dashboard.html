@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | AFRA Connect</title>
+    <meta name="description" content="Your AFRA Connect health dashboard.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="../../index.html" class="logo">
+                <span class="logo-afra">AFRA</span>
+                <span class="logo-connect">Connect</span>
+            </a>
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <span class="sidebar-section-title">MAIN</span>
+
+            <a href="dashboard.html" class="sidebar-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="birth-control.html" class="sidebar-link">
+                <i class="fa-solid fa-pills"></i>
+                <span>Birth Control</span>
+            </a>
+
+            <a href="test-kits.html" class="sidebar-link">
+                <i class="fa-solid fa-vial"></i>
+                <span>Test Kits</span>
+            </a>
+
+            <a href="test-results.html" class="sidebar-link">
+                <i class="fa-solid fa-file-medical"></i>
+                <span>Test Results</span>
+            </a>
+
+            <span class="sidebar-section-title">ACCOUNT</span>
+
+            <a href="profile.html" class="sidebar-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#" class="sidebar-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="sidebar-link logout-link" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+        <header class="dashboard-header">
+            <div class="dashboard-header-left">
+                <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <span class="dashboard-greeting">Good morning,</span>
+                    <h1>Welcome back 👋</h1>
+                </div>
+            </div>
+
+            <div class="dashboard-header-right">
+                <button class="notification-btn" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <a href="profile.html" class="user-profile">
+                    <div class="user-avatar">AJ</div>
+                    <div class="user-profile-info">
+                        <strong>Afia</strong>
+                        <span>My account</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+            <!-- Welcome Card -->
+            <section class="welcome-card">
+                <div class="welcome-content">
+                    <span class="welcome-label">YOUR HEALTH OVERVIEW</span>
+                    <h2>Stay on top of your reproductive health.</h2>
+                    <p>Manage your birth-control information, test kits and test results from one place.</p>
+                    <a href="profile.html" class="btn btn-white">
+                        View my profile
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="welcome-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+            </section>
+
+            <!-- Overview Cards -->
+            <section class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon pink-icon">
+                            <i class="fa-solid fa-pills"></i>
+                        </div>
+                        <span class="overview-status active-status">Active</span>
+                    </div>
+                    <span class="overview-label">Birth Control</span>
+                    <h3>Active Method</h3>
+                    <p>Next reminder: Today, 8:00 PM</p>
+                    <a href="birth-control.html" class="overview-link">
+                        View details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon lavender-icon">
+                            <i class="fa-solid fa-vial"></i>
+                        </div>
+                        <span class="overview-status">2 registered</span>
+                    </div>
+                    <span class="overview-label">Test Kits</span>
+                    <h3>Registered Kits</h3>
+                    <p>Last kit added: 12 Aug 2026</p>
+                    <a href="test-kits.html" class="overview-link">
+                        View test kits
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-card-top">
+                        <div class="overview-icon green-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+                        <span class="overview-status">3 records</span>
+                    </div>
+                    <span class="overview-label">Test Results</span>
+                    <h3>Health Records</h3>
+                    <p>Latest result: 10 Aug 2026</p>
+                    <a href="test-results.html" class="overview-link">
+                        View results
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Dashboard Columns -->
+            <section class="dashboard-columns">
+                <div class="dashboard-panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">UPCOMING</span>
+                            <h2>Reminders</h2>
+                        </div>
+                        <button class="panel-more-btn" aria-label="More options">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </div>
+
+                    <div class="reminder-list">
+                        <div class="reminder-item">
+                            <div class="reminder-item-icon pink-icon">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+                            <div class="reminder-item-content">
+                                <strong>Birth-control reminder</strong>
+                                <span>Today · 8:00 PM</span>
+                            </div>
+                            <span class="reminder-badge">Today</span>
+                        </div>
+
+                        <div class="reminder-item">
+                            <div class="reminder-item-icon lavender-icon">
+                                <i class="fa-solid fa-vial"></i>
+                            </div>
+                            <div class="reminder-item-content">
+                                <strong>Test follow-up</strong>
+                                <span>18 Aug 2026</span>
+                            </div>
+                            <span class="reminder-badge upcoming">Upcoming</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">RECENT ACTIVITY</span>
+                            <h2>Health Records</h2>
+                        </div>
+                        <a href="test-results.html" class="panel-link">View all</a>
+                    </div>
+
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon green-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="activity-content">
+                                <strong>Test result recorded</strong>
+                                <span>Pregnancy test · 10 Aug 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon lavender-icon">
+                                <i class="fa-solid fa-vial"></i>
+                            </div>
+                            <div class="activity-content">
+                                <strong>Test kit registered</strong>
+                                <span>Home test kit · 8 Aug 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon pink-icon">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+                            <div class="activity-content">
+                                <strong>Birth-control record updated</strong>
+                                <span>5 Aug 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Privacy Notice -->
+            <section class="privacy-notice">
+                <div class="privacy-notice-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <strong>Your information matters.</strong>
+                    <p>AFRA Connect is designed with privacy and responsible health-data management in mind.</p>
+                </div>
+                <a href="../about.html">Learn more</a>
+            </section>
+        </main>
+    </div>
+
+    <script src="../src/script.js"></script>
+    <script src="../src/user-dashboard.js"></script>
+</body>
+</html>

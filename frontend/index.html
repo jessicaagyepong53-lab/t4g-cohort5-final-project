@@ -2,27 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <!-- Makes the website responsive on phones and tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Browser tab title -->
     <title>AFRA Connect | Reproductive Health, Connected</title>
-
     <!-- Website description -->
-    <meta
-        name="description"
-        content="AFRA Connect gives you one secure place to manage birth control records, home test kits and test results."
-    >
-
+    <meta name="description" content="AFRA Connect gives you one secure place to manage birth control records, home test kits and test results.">
     <!-- Font Awesome Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="pages/src/style.css">
 </head>
 
 <body>
@@ -51,6 +40,10 @@
 
                 <a href="pages/about.html" class="nav-link">
                     About
+                </a>
+
+                <a href="#location" class="nav-link">
+                    Location
                 </a>
 
                 <a href="#contact" class="nav-link">
@@ -101,6 +94,11 @@
             <i class="fa-solid fa-heart-pulse"></i>
             About
         </a>
+        
+        <a href="#location" class="mobile-nav-link">
+            <i class="fa-solid fa-location-dot"></i>
+            Location
+        </a>
 
         <a href="#contact" class="mobile-nav-link">
             <i class="fa-solid fa-envelope"></i>
@@ -146,8 +144,8 @@
 
                     <p>
                         AFRA Connect gives you one secure place to manage
-                        birth-control records, home test kits and test results
-                        — with room to grow into a connected health ecosystem.
+                        birth-control records, home test kits and test results 
+                        with room to grow into a connected health ecosystem.
                     </p>
 
                     <div class="hero-actions">
@@ -560,7 +558,82 @@
         </section>
 
     </main>
+<!-- =========================
+     LOCATION / CONTACT
+========================== -->
+<section class="location-section" id="location">
 
+    <div class="container location-grid">
+
+        <div class="location-card">
+
+            <span class="location-badge">
+                <i class="fa-solid fa-location-dot"></i>
+                VISIT US
+            </span>
+
+            <h2>Find us in Tema</h2>
+
+            <p>
+                We're based in Community 11, Tema reach out or
+                stop by if you'd like to talk to the AFRA Connect team.
+            </p>
+
+            <div class="location-details">
+
+                <div class="location-detail">
+                    <div class="location-detail-icon">
+                        <i class="fa-solid fa-map-pin"></i>
+                    </div>
+
+                    <div>
+                        <strong>Address</strong>
+                        <span>Near Alisa Hostel, Community 11, Tema, Ghana</span>
+                    </div>
+                </div>
+
+                <div class="location-detail">
+                    <div class="location-detail-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <strong>Hours</strong>
+                        <span>Monday – Friday, 8:00 AM – 5:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="location-detail">
+                    <div class="location-detail-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <strong>Email</strong>
+                        <span>hello@afraconnect.com</span>
+                    </div>
+                </div>
+
+            </div>            
+                href="https://www.google.com/maps/search/?api=1&query=Alisa+Hostel+Community+11+Tema+Ghana" target="_blank" rel="noopener" class="btn btn-primary">
+                Get directions
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+
+        </div>
+
+        <div class="location-map-wrapper">
+            <iframe
+                src="https://www.google.com/maps?q=Alisa+Hostel+Community+11+Tema+Ghana&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="AFRA Connect location near Alisa Hostel, Community 11, Tema"
+            ></iframe>
+        </div>
+
+    </div>
+
+</section>
 
     <!-- =========================
          FOOTER
@@ -690,10 +763,7 @@
         </div>
 
     </footer>
-
-
     <!-- Main JavaScript -->
-    <script src="js/script.js"></script>
-
+    <script src="pages/src/script.js"></script>
 </body>
 </html>

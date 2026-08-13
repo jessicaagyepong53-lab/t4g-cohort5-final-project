@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | AFRA Connect</title>
+    <meta name="description" content="Create your AFRA Connect account and start managing your reproductive-health information.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body class="auth-page">
+    <!-- =========================
+         AUTHENTICATION CONTAINER
+    ========================== -->
+
+    <main class="auth-container">
+        <!-- =========================
+             LEFT SIDE
+        ========================== -->
+
+        <section class="auth-brand">
+            <!-- Logo -->
+            <a href="../index.html" class="auth-logo">
+                <span>AFRA</span>
+                <strong>Connect</strong>
+            </a>
+
+            <!-- Brand content -->
+            <div class="auth-brand-content">
+                <span class="auth-badge">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    Reproductive health, connected.
+                </span>
+
+                <h1>
+                    Take control of
+                    <br>
+                    your health
+                    <br>
+                    <span>information.</span>
+                </h1>
+
+                <p>
+                    Create your AFRA Connect account and keep your
+                    reproductive-health information organized in
+                    one secure place.
+                </p>
+            </div>
+
+            <!-- Benefits -->
+            <div class="auth-benefits">
+                <div class="auth-benefit">
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-pills"></i>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Birth-control tracking
+                        </strong>
+
+                        <span>
+                            Keep your methods and reminders organized.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="auth-benefit">
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-vial"></i>
+                    </div>
+                    <div>
+                        <strong>
+                            Test-kit records
+                        </strong>
+                        <span>
+                            Keep track of your registered test kits.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="auth-benefit">
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-file-medical"></i>
+                    </div>
+                    <div>
+                        <strong>
+                            Test-result history
+                        </strong>
+
+                        <span>
+                            Record and organize your test results.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             RIGHT SIDE
+        ========================== -->
+        <section class="auth-form-section">
+            <div class="auth-form-wrapper">
+                <!-- Mobile logo -->
+                <a
+                    href="../index.html"
+                    class="mobile-auth-logo"
+                >
+                    <span>AFRA</span>
+                    <strong>Connect</strong>
+
+                </a>
+
+                <!-- Heading -->
+                <div class="auth-heading">
+                    <h2>
+                        Create your account
+                    </h2>
+
+                    <p>
+                        Start your AFRA Connect journey today.
+                    </p>
+                </div>
+
+                <!-- =========================
+                     SIGN UP FORM
+                ========================== -->
+                <form
+                    action="#"
+                    method="POST"
+                    id="signupForm"
+                    class="auth-form"
+                >
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="fullName">
+                            Full name
+                        </label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user"></i>
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="signupEmail">
+                            Email address
+                        </label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input
+                                type="email"
+                                id="signupEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="form-group">
+                        <label for="phone">
+                            Phone number
+                        </label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-phone"></i>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+233 XX XXX XXXX"
+                                autocomplete="tel"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="form-group">
+                        <label for="dateOfBirth">
+                            Date of birth
+                        </label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-calendar"></i>
+                            <input
+                                type="date"
+                                id="dateOfBirth"
+                                name="dateOfBirth"
+                                autocomplete="bday"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="signupPassword">
+                            Password
+                        </label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input
+                                type="password"
+                                id="signupPassword"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                required
+                            >
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="signupPasswordToggle"
+                                aria-label="Show password"
+                            >
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <!-- Password requirements -->
+                        <div class="password-requirements">
+                            <span id="lengthRequirement">
+                                <i class="fa-solid fa-circle"></i>
+                                At least 8 characters
+                            </span>
+
+                            <span id="numberRequirement">
+                                <i class="fa-solid fa-circle"></i>
+                                At least one number
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+                        <label for="confirmPassword">
+                            Confirm password
+                        </label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="confirmPasswordToggle"
+                                aria-label="Show password"
+                            >
+
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Terms -->
+                    <div class="terms-row">
+                        <label class="checkbox-container">
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                name="terms"
+                                required
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span>
+
+                                I agree to the
+
+                                <a href="#">
+                                    Terms of Service
+                                </a>
+
+                                and
+
+                                <a href="#">
+                                    Privacy Policy
+                                </a>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="btn btn-primary auth-submit"
+                    >
+                        <span>
+                            Create account
+                        </span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <!-- Form message -->
+                    <div
+                        class="form-message"
+                        id="signupMessage"
+                        role="alert"
+                    ></div>
+                </form>
+
+                <!-- Login link -->
+                <div class="auth-switch">
+                    <span>
+                        Already have an account?
+                    </span>
+                    <a href="login.html">
+                        Log in
+                    </a>
+                </div>
+
+                <!-- Back home -->
+                <a
+                    href="../index.html"
+                    class="back-home"
+                >
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to home
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="src/script.js"></script>
+    <script src="src/auth.js"></script>
+</body>
+</html>
