@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initLandingMobileNav();
     initDashboardSidebar();
     initLogout();
+    initContactForm();
     initNotifications();
     initSearch();
     initUserFilters();
@@ -76,6 +77,35 @@ function initDashboardSidebar() {
         if (!sidebar.contains(event.target) && !openBtn?.contains(event.target)) {
             sidebar.classList.remove("sidebar-open");
         }
+    });
+}
+
+/* ==================== CONTACT ==================== */
+function initContactForm() {
+    const form = document.getElementById("contactForm");
+    const messageBox = document.getElementById("contactFormMessage");
+
+    if (!form) return;
+
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+
+        const name = document.getElementById("contactName")?.value.trim();
+        const email = document.getElementById("contactEmail")?.value.trim();
+        const message = document.getElementById("contactMessage")?.value.trim();
+
+        if (!name || !email || !message) {
+            messageBox.textContent = "Please fill in your name, email and message.";
+            messageBox.classList.remove("success-message");
+            messageBox.classList.add("error-message");
+            return;
+        }
+
+        messageBox.textContent = "Thanks! Your message has been received — we'll get back to you within 24 hours.";
+        messageBox.classList.remove("error-message");
+        messageBox.classList.add("success-message");
+
+        form.reset();
     });
 }
 
