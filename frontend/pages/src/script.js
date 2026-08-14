@@ -2,6 +2,9 @@ const API_BASE_URL = "http://127.0.0.1:8000";
 
 document.addEventListener("DOMContentLoaded", () => {
     initAuthGuard();
+    initDashboardUserInfo();
+    initManagementTestKits();
+    initUserTestKits();
     initLandingMobileNav();
     initDashboardSidebar();
     initLogout();
@@ -341,7 +344,7 @@ function initUserDetailModal() {
 /* ==================== GENERIC MODAL FORM SUBMISSION ==================== */
 
 function initGenericModalForms() {
-    const customFormIds = new Set(["profileForm", "passwordForm"]);
+    const customFormIds = new Set(["profileForm", "passwordForm", "testKitForm"]);
 
     document.querySelectorAll(".modal form").forEach(form => {
         if (customFormIds.has(form.id)) return;
@@ -638,7 +641,7 @@ function initLoginForm() {
 
             if (data.user.role === "management") {
                 saveManagementUser(data.user);
-                window.location.href = "pages/management/dashboard.html";
+                window.location.href = "management/dashboard.html";
             } else {
                 saveUser(data.user);
                 window.location.href = "user/dashboard.html";
@@ -922,7 +925,7 @@ function initAuthGuard() {
     if (isManagementPage) {
         const managementUser = getManagementUser();
         if (!managementUser) {
-            window.location.href = "../../login.html";
+            window.location.href = "../login.html";
         }
         return;
     }
@@ -933,6 +936,300 @@ function initAuthGuard() {
             window.location.href = "../login.html";
         }
     }
+}
+
+/* ==================== DASHBOARD: SHOW REAL LOGGED-IN USER INFO ==================== */
+
+function initDashboardUserInfo() {
+    const path = window.location.pathname;
+
+    const isManagementPage = path.includes("/management/");
+    const isUserPage = path.includes("/user/") && !isManagementPage;
+
+    let account = null;
+
+    if (isManagementPage) {
+        account = getManagementUser();
+    } else if (isUserPage) {
+        account = getUser();
+    }
+
+    if (!account) return;
+
+    const name = account.name || account.fullName || "";
+    const firstName = name.split(" ")[0] || (isManagementPage ? "Admin" : "there");
+
+    // The management page's h1 is a page title ("Dashboard"), not a greeting —
+    // only rewrite the welcome heading on the user dashboard.
+    if (isUserPage) {
+        const heading = document.querySelector(".dashboard-header-left h1");
+        if (heading) heading.textContent = `Welcome back, ${firstName} 👋`;
+    }
+
+    const nameLabel = document.querySelector(".user-profile-info strong");
+    if (nameLabel) nameLabel.textContent = firstName;
+
+    const avatar = document.querySelector(".user-profile .user-avatar");
+    if (avatar) {
+        const initials = name
+            .split(" ")
+            .map(part => part.charAt(0))
+            .join("")
+            .substring(0, 2)
+            .toUpperCase();
+
+        avatar.textContent = initials || (isManagementPage ? "AD" : "U");
+    }
+}
+
+/* ==================== MANAGEMENT: TEST KITS CATALOGUE ==================== */
+
+function initManagementTestKits() {
+    const table = document.getElementById("testKitsTable");
+    if (!table) return; // not on management/test-kits.html
+
+    loadManagementTestKits(table);
+
+    const form = document.getElementById("testKitForm");
+    if (!form) return;
+
+    form.addEventListener("submit", async event => {
+        event.preventDefault();
+
+        const managementUser = getManagementUser();
+        if (!managementUser) {
+            showToast("You must be logged in as management to add a test kit.", "error");
+            return;
+        }
+
+        const payload = {
+            name: document.getElementById("testKitName")?.value.trim(),
+            kit_type: document.getElementById("testKitType")?.value,
+            manufacturer: document.getElementById("testKitManufacturer")?.value.trim() || null,
+            kit_code: document.getElementById("testKitCode")?.value.trim() || null,
+            status: document.getElementById("testKitStatus")?.value || "active",
+            description: document.getElementById("testKitDescription")?.value.trim() || null,
+            instructions: document.getElementById("testKitInstructions")?.value.trim() || null,
+            added_by: managementUser.id
+        };
+
+        if (!payload.name || !payload.kit_type || !payload.manufacturer) {
+            showToast("Please complete the required fields.", "error");
+            return;
+        }
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/test-kits/`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                showToast(data.detail || "Could not add test kit.", "error");
+                return;
+            }
+
+            showToast("Test kit added successfully.");
+            form.reset();
+            form.closest(".modal-overlay")?.classList.remove("show");
+            loadManagementTestKits(table);
+        } catch (error) {
+            showToast("Could not connect to the server.", "error");
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+        }
+    });
+}
+
+async function loadManagementTestKits(table) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/test-kits/`);
+        if (!response.ok) return;
+
+        const kits = await response.json();
+        renderManagementTestKitsTable(table, kits);
+    } catch (error) {
+        // Leave the existing static rows in place if the backend is unreachable
+    }
+}
+
+function renderManagementTestKitsTable(table, kits) {
+    if (!Array.isArray(kits) || kits.length === 0) return;
+
+    table.innerHTML = kits.map(kit => {
+        const statusClass = kit.status === "active" ? "status-active" : "status-review";
+        const updated = kit.created_at
+            ? new Date(kit.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
+            : "";
+
+        return `
+            <tr>
+                <td>
+                    <div class="table-product">
+                        <div class="table-product-icon green-icon">
+                            <i class="fa-solid fa-vial"></i>
+                        </div>
+                        <div>
+                            <strong>${escapeHtml(kit.name)}</strong>
+                            <span>Kit ID: ${escapeHtml(kit.kit_code || "N/A")}</span>
+                        </div>
+                    </div>
+                </td>
+                <td>${escapeHtml(kit.kit_type)}</td>
+                <td>${escapeHtml(kit.manufacturer || "—")}</td>
+                <td>
+                    <span class="table-status ${statusClass}">
+                        <i class="fa-solid fa-circle"></i>
+                        ${escapeHtml(kit.status)}
+                    </span>
+                </td>
+                <td>${updated}</td>
+                <td>
+                    <button class="table-action" aria-label="Test kit options">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </td>
+            </tr>
+        `;
+    }).join("");
+}
+
+/* ==================== USER: MY TEST KITS ==================== */
+
+function initUserTestKits() {
+    const list = document.querySelector(".test-kit-list");
+    if (!list) return; // not on user/test-kits.html
+
+    loadUserTestKits(list);
+
+    const form = document.getElementById("testKitForm");
+    if (!form) return;
+
+    form.addEventListener("submit", async event => {
+        event.preventDefault();
+
+        const user = getUser();
+        if (!user) {
+            showToast("You must be logged in to register a test kit.", "error");
+            return;
+        }
+
+        const payload = {
+            user_id: user.id,
+            kit_type: document.getElementById("testKitType")?.value,
+            serial_number: document.getElementById("kitId")?.value.trim(),
+            manufacturer: document.getElementById("manufacturer")?.value.trim() || null,
+            purchase_date: document.getElementById("purchaseDate")?.value || null,
+            expiry_date: document.getElementById("expiryDate")?.value || null,
+            notes: document.getElementById("testKitNotes")?.value.trim() || null
+        };
+
+        if (!payload.kit_type || !payload.serial_number) {
+            showToast("Please complete the required fields.", "error");
+            return;
+        }
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/user-test-kits/`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                showToast(data.detail || "Could not register test kit.", "error");
+                return;
+            }
+
+            showToast("Test kit registered successfully.");
+            form.reset();
+            form.closest(".modal-overlay")?.classList.remove("show");
+            loadUserTestKits(list);
+        } catch (error) {
+            showToast("Could not connect to the server.", "error");
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+        }
+    });
+}
+
+async function loadUserTestKits(list) {
+    const user = getUser();
+    if (!user) return;
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/user-test-kits/user/${user.id}`);
+        if (!response.ok) return;
+
+        const kits = await response.json();
+        renderUserTestKitsList(list, kits);
+    } catch (error) {
+        // Leave the existing static cards in place if the backend is unreachable
+    }
+}
+
+function renderUserTestKitsList(list, kits) {
+    const emptyState = document.getElementById("testKitEmptyState");
+
+    if (!Array.isArray(kits) || kits.length === 0) {
+        list.innerHTML = "";
+        emptyState?.classList.add("show");
+        return;
+    }
+
+    emptyState?.classList.remove("show");
+
+    list.innerHTML = kits.map(kit => {
+        const registered = kit.created_at
+            ? new Date(kit.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
+            : "";
+
+        return `
+            <article class="test-kit-card">
+                <div class="test-kit-icon lavender-icon">
+                    <i class="fa-solid fa-vial"></i>
+                </div>
+                <div class="test-kit-info">
+                    <span class="test-kit-category">HOME TEST KIT</span>
+                    <h3>${escapeHtml(kit.kit_type)}</h3>
+                    <div class="test-kit-meta">
+                        <span>
+                            <i class="fa-solid fa-barcode"></i>
+                            Kit ID: ${escapeHtml(kit.serial_number)}
+                        </span>
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            Registered: ${registered}
+                        </span>
+                    </div>
+                </div>
+                <div class="test-kit-status">
+                    <span class="status-badge status-pending">Not used</span>
+                    <button class="icon-button" aria-label="Test kit options">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+            </article>
+        `;
+    }).join("");
+}
+
+function escapeHtml(value) {
+    if (value === null || value === undefined) return "";
+    const div = document.createElement("div");
+    div.textContent = String(value);
+    return div.innerHTML;
 }
 
 /* ==================== LOCAL STORAGE HELPERS ==================== */
