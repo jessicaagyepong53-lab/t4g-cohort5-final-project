@@ -6,7 +6,14 @@
     <title>Management Dashboard | AFRA Connect</title>
     <meta name="description" content="AFRA Connect management dashboard.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="../logo/favicon.png" sizes="32x32">
+    <link rel="shortcut icon" href="../logo/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../src/style.css">
+    <script>
+    if (localStorage.getItem("afraTheme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+    }
+</script>
 </head>
 
 <body class="dashboard-page">
@@ -85,6 +92,9 @@
             </div>
 
             <div class="dashboard-header-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <i class="fa-solid fa-moon"></i>
+</button>
 
                 <button class="notification-btn" aria-label="Notifications">
                     <i class="fa-regular fa-bell"></i>

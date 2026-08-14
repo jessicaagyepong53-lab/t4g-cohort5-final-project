@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        if (localStorage.getItem("afraTheme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | AFRA Connect</title>
+    <meta name="description" content="The page you're looking for doesn't exist.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="pages/src/style.css">
+    <link rel="icon" type="image/png" href="pages/src/favicon.png">
+    <link rel="shortcut icon" href="pages/src/favicon.ico">
+    <style>
+        .error-page{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:linear-gradient(135deg,#fafbf0,#f3f7dc);
+            padding:30px 20px;
+        }
+        .error-card{
+            text-align:center;
+            max-width:480px;
+        }
+        .error-badge{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            width:90px;
+            height:90px;
+            border-radius:50%;
+            background:var(--white);
+            border:1px solid var(--border);
+            box-shadow:var(--shadow);
+            color:var(--primary);
+            font-size:34px;
+            margin-bottom:26px;
+        }
+        .error-code{
+            font-size:72px;
+            font-weight:900;
+            letter-spacing:-2px;
+            background:linear-gradient(135deg,#8bc53f,#15171c);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            line-height:1;
+            margin-bottom:10px;
+        }
+        .error-card h1{
+            font-size:24px;
+            color:var(--dark);
+            font-weight:800;
+            margin-bottom:12px;
+        }
+        .error-card p{
+            color:#777;
+            font-size:15px;
+            line-height:1.7;
+            margin-bottom:30px;
+        }
+        .error-actions{
+            display:flex;
+            gap:12px;
+            justify-content:center;
+            flex-wrap:wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="error-page">
+        <div class="error-card">
+
+            <div class="error-badge">
+                <i class="fa-solid fa-heart-crack"></i>
+            </div>
+
+            <div class="error-code">404</div>
+
+            <h1>We couldn't find that page</h1>
+
+            <p>
+                The page you're looking for may have been moved, renamed,
+                or doesn't exist. Let's get you back on track.
+            </p>
+
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fa-solid fa-house"></i>
+                    Back to home
+                </a>
+
+                <a href="index.html#contact" class="btn btn-light">
+                    Contact support
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

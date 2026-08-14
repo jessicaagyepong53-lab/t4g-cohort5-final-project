@@ -10,8 +10,15 @@
     <meta name="description" content="AFRA Connect gives you one secure place to manage birth control records, home test kits and test results.">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="pages/logo/favicon.png" sizes="32x32">
+    <link rel="shortcut icon" href="pages/logo/favicon.ico" type="image/x-icon">
     <!-- Main CSS -->
     <link rel="stylesheet" href="pages/src/style.css">
+    <script>
+    if (localStorage.getItem("afraTheme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+    }
+</script>
 </head>
 
 <body>
@@ -52,6 +59,10 @@
         </nav>
         
             <!-- Navigation Buttons -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon"></i>
+            </button>
+
             <div class="nav-actions">
                 <a href="pages/login.html" class="btn btn-outline">
                     Log in
@@ -284,6 +295,34 @@
 
         </section>
 
+        <!-- =========================
+     STATS STRIP
+========================== -->
+<section class="stats-strip">
+    <div class="container stats-strip-grid">
+
+        <div class="stats-strip-item">
+            <strong>500+</strong>
+            <span>Active users</span>
+        </div>
+
+        <div class="stats-strip-item">
+            <strong>100%</strong>
+            <span>Free to use</span>
+        </div>
+
+        <div class="stats-strip-item">
+            <strong>18+</strong>
+            <span>Supported test kits</span>
+        </div>
+
+        <div class="stats-strip-item">
+            <strong>24/7</strong>
+            <span>Access to your records</span>
+        </div>
+
+    </div>
+</section>
 
         <!-- =========================
              HOW IT WORKS
@@ -390,6 +429,48 @@
 
         </section>
 
+        <!-- =========================
+     PRIVACY & SECURITY
+========================== -->
+<section class="privacy-strip">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">PRIVACY & SECURITY</span>
+            <h2>Built with your privacy in mind</h2>
+            <p>Reproductive-health information is sensitive — here's how AFRA Connect treats it.</p>
+        </div>
+
+        <div class="privacy-strip-grid">
+
+            <div class="privacy-strip-card">
+                <div class="privacy-strip-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3>Private by default</h3>
+                <p>Your records are visible only to you nothing is shared without your permission.</p>
+            </div>
+
+            <div class="privacy-strip-card">
+                <div class="privacy-strip-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h3>You stay in control</h3>
+                <p>Edit, export or delete your health information whenever you choose to.</p>
+            </div>
+
+            <div class="privacy-strip-card">
+                <div class="privacy-strip-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Secure access</h3>
+                <p>Account access is protected, with management access limited by permissions.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
         <!-- =========================
              CONNECTED ECOSYSTEM
@@ -554,6 +635,65 @@
         </section>
 
     </main>
+
+    <!-- =========================
+     FAQ
+========================== -->
+<section class="faq-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">FAQ</span>
+            <h2>Common questions</h2>
+            <p>Everything you need to know before getting started with AFRA Connect.</p>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is my health information private?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. AFRA Connect is designed with privacy at its core your reproductive-health information is only visible to you unless you choose to share it.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is AFRA Connect free to use?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, creating an account and managing your birth-control, test-kit and test-result records is completely free.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can I delete my account and data?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. You're always in control of your information and can request deletion of your account and associated records at any time.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Does AFRA Connect replace medical advice?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>No. AFRA Connect helps you organize your health information, but it doesn't replace professional medical advice from a qualified provider.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
  <!-- =========================
      LOCATION / VISIT US

@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initContactForm();
     initNotifications();
     initSearch();
+    initThemeToggle();
+    initFAQAccordion();
+    initInlineValidation();
     initUserFilters();
     initModalTriggers();
     initModalClosers();
@@ -81,6 +84,7 @@ function initDashboardSidebar() {
 }
 
 /* ==================== CONTACT ==================== */
+
 function initContactForm() {
     const form = document.getElementById("contactForm");
     const messageBox = document.getElementById("contactFormMessage");
@@ -137,7 +141,7 @@ function initNotifications() {
     if (!notificationBtn) return;
 
     notificationBtn.addEventListener("click", () => {
-        alert("You have new notifications.");
+        showToast("You have 3 unread notifications.", "success", "Notifications");
     });
 }
 
@@ -341,7 +345,7 @@ function initGenericModalForms() {
 
         form.addEventListener("submit", event => {
             event.preventDefault();
-            alert("Saved successfully.");
+            showToast("Saved successfully.");
             form.reset();
             form.closest(".modal-overlay")?.classList.remove("show");
         });
@@ -357,7 +361,7 @@ function initProfileForm() {
 
     form.addEventListener("submit", event => {
         event.preventDefault();
-        alert("Profile changes saved successfully.");
+        showToast("Your profile changes have been saved.");
 
         const modal = form.closest(".modal-overlay");
         if (modal) modal.classList.remove("show");
@@ -381,21 +385,21 @@ function initPasswordForm() {
             document.getElementById("confirmNewPassword")?.value;
 
         if (!current || !newPassword || !confirm) {
-            alert("Please complete all password fields.");
+            showToast("Please complete all password fields.", "error");
             return;
         }
 
         if (newPassword !== confirm) {
-            alert("New passwords do not match.");
+            showToast("New passwords do not match.", "error");
             return;
         }
 
         if (newPassword.length < 8) {
-            alert("Password must contain at least 8 characters.");
+            showToast("Password must contain at least 8 characters.", "error");
             return;
         }
 
-        alert("Password updated successfully.");
+        showToast("Your password has been updated.");
 
         form.reset();
         form.closest(".modal-overlay")?.classList.remove("show");
@@ -499,7 +503,7 @@ function initIconButtons() {
         if (modalTriggers[btn.id]) return;
 
         btn.addEventListener("click", () => {
-            alert("This feature is coming soon.");
+            showToast("This feature is coming soon.", "success", "Coming soon");
         });
     });
 }
@@ -509,7 +513,7 @@ function initPanelMoreButtons() {
         if (btn.id === "refreshActivityBtn") return;
 
         btn.addEventListener("click", () => {
-            alert("More options coming soon.");
+            showToast("More options coming soon.", "success", "Coming soon");
         });
     });
 }
@@ -517,18 +521,18 @@ function initPanelMoreButtons() {
 function initTableActions() {
     document.querySelectorAll(".table-action:not(.user-action-btn)").forEach(btn => {
         btn.addEventListener("click", () => {
-            alert("More options coming soon.");
+            showToast("More options coming soon.", "success", "Coming soon");
         });
     });
 }
 
 function initExtraProfileButtons() {
     document.getElementById("twoFactorBtn")?.addEventListener("click", () => {
-        alert("Two-factor authentication setup is coming soon.");
+        showToast("Two-factor authentication setup is coming soon.", "success", "Coming soon");
     });
 
     document.getElementById("loginActivityBtn")?.addEventListener("click", () => {
-        alert("Login activity view is coming soon.");
+        showToast("Login activity view is coming soon.", "success", "Coming soon");
     });
 }
 
@@ -665,6 +669,186 @@ function showSignupMessage(box, text, isError) {
     box.textContent = text;
     box.classList.remove("error-message", "success-message");
     box.classList.add(isError ? "error-message" : "success-message");
+}
+
+/* ==================== TOAST NOTIFICATIONS ==================== */
+
+function ensureToastContainer() {
+    let container = document.querySelector(".toast-container");
+
+    if (!container) {
+        container = document.createElement("div");
+        container.className = "toast-container";
+        document.body.appendChild(container);
+    }
+
+    return container;
+}
+
+function showToast(message, type = "success", title = null) {
+    const container = ensureToastContainer();
+
+    const toast = document.createElement("div");
+    toast.className = `toast${type === "error" ? " toast-error" : ""}`;
+
+    const iconClass = type === "error" ? "fa-triangle-exclamation" : "fa-circle-check";
+    const heading = title || (type === "error" ? "Something went wrong" : "Success");
+
+    toast.innerHTML = `
+        <div class="toast-icon"><i class="fa-solid ${iconClass}"></i></div>
+        <div class="toast-body">
+            <strong>${heading}</strong>
+            <span>${message}</span>
+        </div>
+        <button class="toast-close" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+    `;
+
+    container.appendChild(toast);
+
+    const remove = () => {
+        toast.classList.add("toast-out");
+        setTimeout(() => toast.remove(), 300);
+    };
+
+    toast.querySelector(".toast-close").addEventListener("click", remove);
+
+    setTimeout(remove, 4500);
+}
+
+/* ==================== THEME TOGGLE (DARK MODE) ==================== */
+
+function initThemeToggle() {
+    const toggle = document.getElementById("themeToggle");
+    const root = document.documentElement;
+
+    if (localStorage.getItem("afraTheme") === "dark") {
+        root.setAttribute("data-theme", "dark");
+    }
+
+    updateThemeIcon(root.getAttribute("data-theme") === "dark");
+
+    if (!toggle) return;
+
+    toggle.addEventListener("click", () => {
+        const isDark = root.getAttribute("data-theme") === "dark";
+
+        if (isDark) {
+            root.removeAttribute("data-theme");
+            localStorage.setItem("afraTheme", "light");
+        } else {
+            root.setAttribute("data-theme", "dark");
+            localStorage.setItem("afraTheme", "dark");
+        }
+
+        updateThemeIcon(!isDark);
+    });
+}
+
+function updateThemeIcon(isDark) {
+    const icon = document.querySelector("#themeToggle i");
+
+    if (!icon) return;
+
+    icon.classList.toggle("fa-moon", !isDark);
+    icon.classList.toggle("fa-sun", isDark);
+}
+
+/* ==================== FAQ ACCORDION ==================== */
+
+function initFAQAccordion() {
+    document.querySelectorAll(".faq-question").forEach(question => {
+        question.addEventListener("click", () => {
+            const item = question.closest(".faq-item");
+            const answer = item.querySelector(".faq-answer");
+            const isOpen = item.classList.contains("open");
+
+            document.querySelectorAll(".faq-item.open").forEach(openItem => {
+                if (openItem !== item) {
+                    openItem.classList.remove("open");
+                    openItem.querySelector(".faq-answer").style.maxHeight = null;
+                }
+            });
+
+            if (isOpen) {
+                item.classList.remove("open");
+                answer.style.maxHeight = null;
+            } else {
+                item.classList.add("open");
+                answer.style.maxHeight = `${answer.scrollHeight}px`;
+            }
+        });
+    });
+}
+
+/* ==================== INLINE FORM VALIDATION ==================== */
+
+function initInlineValidation() {
+    document.querySelectorAll(".auth-form input, #contactForm input, #contactForm textarea").forEach(input => {
+        input.addEventListener("blur", () => validateSingleField(input));
+        input.addEventListener("input", () => {
+            const wrapper = input.closest(".input-wrapper") || input.parentElement;
+            if (wrapper?.classList.contains("input-error")) {
+                validateSingleField(input);
+            }
+        });
+    });
+}
+
+function validateSingleField(input) {
+    const wrapper = input.closest(".input-wrapper") || input.parentElement;
+    const existingError = wrapper.parentElement.querySelector(".field-error");
+
+    let isValid = true;
+    let message = "";
+
+    if (input.hasAttribute("required") && !input.value.trim()) {
+        isValid = false;
+        message = "This field is required.";
+    } else if (input.type === "email" && input.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+        isValid = false;
+        message = "Enter a valid email address.";
+    } else if (input.type === "tel" && input.value && input.value.replace(/\D/g, "").length < 9) {
+        isValid = false;
+        message = "Enter a valid phone number.";
+    }
+
+    wrapper.classList.remove("input-error", "input-success");
+
+    if (existingError) existingError.remove();
+
+    if (!input.value && !input.hasAttribute("required")) return true;
+
+    if (isValid) {
+        wrapper.classList.add("input-success");
+    } else {
+        wrapper.classList.add("input-error");
+        const errorEl = document.createElement("span");
+        errorEl.className = "field-error";
+        errorEl.textContent = message;
+        wrapper.parentElement.appendChild(errorEl);
+    }
+
+    return isValid;
+}
+
+/* ==================== SKELETON LOADING (example helper) ==================== */
+
+function showTableSkeleton(tableBodyId, rows = 5, columns = 5) {
+    const tbody = document.getElementById(tableBodyId);
+
+    if (!tbody) return;
+
+    let rowsHtml = "";
+
+    for (let i = 0; i < rows; i++) {
+        let cellsHtml = "";
+        for (let c = 0; c < columns; c++) {
+            cellsHtml += `<td><div class="skeleton skeleton-line" style="width:${60 + Math.random() * 30}%"></div></td>`;
+        }
+        rowsHtml += `<tr class="skeleton-row">${cellsHtml}</tr>`;
+    }
+
+    tbody.innerHTML = rowsHtml;
 }
 
 /* ==================== LOCAL STORAGE HELPERS ==================== */
