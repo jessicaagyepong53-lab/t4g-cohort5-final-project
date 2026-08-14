@@ -1,4 +1,7 @@
+const API_BASE_URL = "http://127.0.0.1:8000";
+
 document.addEventListener("DOMContentLoaded", () => {
+    initAuthGuard();
     initLandingMobileNav();
     initDashboardSidebar();
     initLogout();
@@ -594,7 +597,7 @@ function initLoginForm() {
 
     if (!form) return;
 
-    form.addEventListener("submit", event => {
+    form.addEventListener("submit", async event => {
         event.preventDefault();
 
         const email = document.getElementById("email")?.value.trim();
@@ -608,11 +611,46 @@ function initLoginForm() {
             return;
         }
 
-        if (errorBox) errorBox.textContent = "";
+        if (errorBox) {
+            errorBox.textContent = "";
+            errorBox.classList.remove("error-message");
+        }
 
-        saveUser({ email });
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
 
-        window.location.href = "user/dashboard.html";
+        try {
+            const response = await fetch(`${API_BASE_URL}/users/login`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                if (errorBox) {
+                    errorBox.textContent = data.detail || "Invalid email or password.";
+                    errorBox.classList.add("error-message");
+                }
+                return;
+            }
+
+            if (data.user.role === "management") {
+                saveManagementUser(data.user);
+                window.location.href = "pages/management/dashboard.html";
+            } else {
+                saveUser(data.user);
+                window.location.href = "user/dashboard.html";
+            }
+        } catch (error) {
+            if (errorBox) {
+                errorBox.textContent = "Could not connect to the server. Please try again.";
+                errorBox.classList.add("error-message");
+            }
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+        }
     });
 }
 
@@ -624,7 +662,7 @@ function initSignupForm() {
 
     if (!form) return;
 
-    form.addEventListener("submit", event => {
+    form.addEventListener("submit", async event => {
         event.preventDefault();
 
         const fullName = document.getElementById("fullName")?.value.trim();
@@ -653,13 +691,35 @@ function initSignupForm() {
             return;
         }
 
-        saveUser({ fullName, email });
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
 
-        showSignupMessage(messageBox, "Account created successfully. Redirecting to login...", false);
+        try {
+            const response = await fetch(`${API_BASE_URL}/users/`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: fullName, email, password, role: "user" })
+            });
 
-        setTimeout(() => {
-            window.location.href = "login.html";
-        }, 1200);
+            const data = await response.json();
+
+            if (!response.ok) {
+                showSignupMessage(messageBox, data.detail || "Signup failed. Please try again.", true);
+                return;
+            }
+
+            saveUser(data);
+
+            showSignupMessage(messageBox, "Account created successfully. Redirecting to login...", false);
+
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 1200);
+        } catch (error) {
+            showSignupMessage(messageBox, "Could not connect to the server. Please try again.", true);
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+        }
     });
 }
 
@@ -849,6 +909,30 @@ function showTableSkeleton(tableBodyId, rows = 5, columns = 5) {
     }
 
     tbody.innerHTML = rowsHtml;
+}
+
+/* ==================== AUTH GUARD (PROTECT DASHBOARD PAGES) ==================== */
+
+function initAuthGuard() {
+    const path = window.location.pathname;
+
+    const isManagementPage = path.includes("/management/");
+    const isUserPage = path.includes("/user/") && !path.includes("/management/");
+
+    if (isManagementPage) {
+        const managementUser = getManagementUser();
+        if (!managementUser) {
+            window.location.href = "../../login.html";
+        }
+        return;
+    }
+
+    if (isUserPage) {
+        const user = getUser();
+        if (!user) {
+            window.location.href = "../login.html";
+        }
+    }
 }
 
 /* ==================== LOCAL STORAGE HELPERS ==================== */

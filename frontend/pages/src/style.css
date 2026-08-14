@@ -1037,7 +1037,7 @@ img{max-width:100%;display:block}
 }
 
 .input-wrapper input[type="password"]{
-    padding-right:42px;
+    padding-right:46px;
 }
 
 .input-wrapper input:focus,
@@ -1305,16 +1305,28 @@ textarea{
 
 .password-toggle{
     position:absolute;
-    right:12px;
+    right:8px;
     top:50%;
     transform:translateY(-50%);
+    width:30px;
+    height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     background:none;
+    border:none;
     color:var(--muted);
     font-size:14px;
-    padding:4px;
+    padding:0;
+    appearance:none;
+    -webkit-appearance:none;
+    border-radius:6px;
 }
 
-.password-toggle:hover{color:var(--dark)}
+.password-toggle:hover{
+    color:var(--dark);
+    background:var(--mint);
+}
 
 .password-requirements{
     display:flex;
@@ -4533,4 +4545,14 @@ textarea{
 [data-theme="dark"] .skeleton{
     background:linear-gradient(90deg,#1c1f17 25%,#232a1c 37%,#1c1f17 63%);
     background-size:400% 100%;
+}
+
+.form-error {
+  background-color: #fde8e8;
+  color: #c0392b;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border-left: 4px solid #c0392b;
 }
