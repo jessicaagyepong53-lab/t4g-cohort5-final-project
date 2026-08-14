@@ -1,28 +1,32 @@
 from pydantic import BaseModel, EmailStr
-from typing import Optional
+from datetime import datetime
+from enum import Enum
 
 
-class UserCreate(BaseModel):
-    full_name: str
+class UserRoleSchema(str, Enum):
+    management = "management"
+    user = "user"
+
+
+class UserBase(BaseModel):
+    name: str
     email: EmailStr
+    role: UserRoleSchema = UserRoleSchema.user
+
+
+class UserCreate(UserBase):
     password: str
-    phone: Optional[str] = None
 
 
-class UserResponse(BaseModel):
+class UserUpdate(BaseModel):
+    name: str | None = None
+    email: EmailStr | None = None
+    role: UserRoleSchema | None = None
+
+
+class UserOut(UserBase):
     id: str
-    full_name: str
-    email: EmailStr
-    role: str
-    phone: Optional[str] = None
-    is_active: bool
+    created_at: datetime
 
-
-class UserLogin(BaseModel):
-    email: EmailStr
-    password: str
-
-
-class TokenResponse(BaseModel):
-    access_token: str
-    token_type: str
+    class Config:
+        from_attributes = True
