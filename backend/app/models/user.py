@@ -25,3 +25,9 @@ class User(Base):
     test_results = relationship(
         "TestResult", back_populates="user", cascade="all, delete-orphan"
     )
+    test_kits = relationship(
+        "TestKit", back_populates="added_by_user", cascade="all, delete-orphan"
+    )
+    user_test_kits = relationship(
+        "UserTestKit", back_populates="user", cascade="all, delete-orphan"
+    )

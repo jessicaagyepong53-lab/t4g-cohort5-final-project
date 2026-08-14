@@ -1,13 +1,23 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from app.schemas.auth import LoginRequest, LoginResponse
-
 from app.database.connection import get_db
 from app.schemas.user import UserCreate, UserUpdate, UserOut
+from app.schemas.auth import LoginRequest, LoginResponse
 from app.repositories import user_repository
 
 router = APIRouter(prefix="/users", tags=["Users"])
+
+
+@router.post("/login", response_model=LoginResponse)
+def login(credentials: LoginRequest, db: Session = Depends(get_db)):
+    user = user_repository.authenticate_user(db, credentials.email, credentials.password)
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid email or password",
+        )
+    return LoginResponse(user=user)
 
 
 @router.post("/", response_model=UserOut, status_code=status.HTTP_201_CREATED)
@@ -20,15 +30,6 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
         )
     return user_repository.create_user(db, user)
 
-@router.post("/login", response_model=LoginResponse)
-def login(credentials: LoginRequest, db: Session = Depends(get_db)):
-    user = user_repository.authenticate_user(db, credentials.email, credentials.password)
-    if not user:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid email or password",
-        )
-    return LoginResponse(user=user)
 
 @router.get("/", response_model=list[UserOut])
 def list_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):

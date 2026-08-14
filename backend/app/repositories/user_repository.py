@@ -1,16 +1,27 @@
-import bcrypt
 from sqlalchemy.orm import Session
+from passlib.context import CryptContext
 
 from app.models.user import User
 from app.schemas.user import UserCreate, UserUpdate
 
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
 
 def hash_password(password: str) -> str:
-    return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
+    return pwd_context.hash(password)
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return bcrypt.checkpw(plain_password.encode("utf-8"), hashed_password.encode("utf-8"))
+    return pwd_context.verify(plain_password, hashed_password)
+
+
+def authenticate_user(db: Session, email: str, password: str) -> User | None:
+    user = get_user_by_email(db, email)
+    if not user:
+        return None
+    if not verify_password(password, user.password_hash):
+        return None
+    return user
 
 
 def get_user(db: Session, user_id: str) -> User | None:
@@ -59,12 +70,3 @@ def delete_user(db: Session, user_id: str) -> bool:
     db.delete(db_user)
     db.commit()
     return True
-
-
-def authenticate_user(db: Session, email: str, password: str) -> User | None:
-    user = get_user_by_email(db, email)
-    if not user:
-        return None
-    if not verify_password(password, user.password_hash):
-        return None
-    return user
